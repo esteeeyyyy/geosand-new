@@ -1,0 +1,539 @@
+{
+  "type": "FeatureCollection",
+  "name": "Samson_Corpuz_Quarry_Detailed_Layers",
+  "properties": {
+    "quarry_id": 1,
+    "quarry_name": "Samson Corpuz",
+    "operator": "Samson Corpuz",
+    "barangay": "Morente",
+    "municipality": "Bongabong",
+    "province": "Oriental Mindoro",
+    "area_hectares": 5.02,
+    "permit_number": null,
+    "status": "inactive",
+    "total_layers": 12
+  },
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SEC-01",
+        "name": "Concession Perimeter Boundary",
+        "type": "Concession Boundary",
+        "category": "Cadastral",
+        "status": "inactive",
+        "area_hectares": 5.02,
+        "color": "#0ea5e9",
+        "elevation": 0.0,
+        "extrusion_height": 2.0,
+        "description": "Mapped 5.02-hectare sand and gravel concession boundary; permit details are unassigned."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4121389,
+              12.6705833,
+              0
+            ],
+            [
+              121.4143611,
+              12.6699722,
+              0
+            ],
+            [
+              121.4138889,
+              12.6682222,
+              0
+            ],
+            [
+              121.4116667,
+              12.6688333,
+              0
+            ],
+            [
+              121.4121389,
+              12.6705833,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "PIT-01",
+        "name": "Active Extraction Pit (Bench A)",
+        "type": "Extraction Zone",
+        "category": "Mining Activity",
+        "status": "inactive",
+        "color": "#8c6b4a",
+        "elevation": -8.0,
+        "extrusion_height": -8.0,
+        "pit_depth": -8.0,
+        "description": "Primary upper bench excavation zone for fluvial sand and gravel extraction along the river floodplain."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4121706,
+              12.6691083,
+              -8.0
+            ],
+            [
+              121.4130595,
+              12.6688639,
+              -8.0
+            ],
+            [
+              121.4132767,
+              12.6696689,
+              -8.0
+            ],
+            [
+              121.4123878,
+              12.6699133,
+              -8.0
+            ],
+            [
+              121.4121706,
+              12.6691083,
+              -8.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "PIT-02",
+        "name": "Deep Pit Excavation (Bench B)",
+        "type": "Extraction Zone",
+        "category": "Mining Activity",
+        "status": "inactive",
+        "color": "#5c4026",
+        "elevation": -16.5,
+        "extrusion_height": -16.5,
+        "pit_depth": -16.5,
+        "description": "Central deeper sand trench excavation zone; regulated depth monitored by MENRO."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.41244,
+              12.6692222,
+              -16.5
+            ],
+            [
+              121.4128845,
+              12.6691,
+              -16.5
+            ],
+            [
+              121.4130072,
+              12.669555,
+              -16.5
+            ],
+            [
+              121.4125628,
+              12.6696772,
+              -16.5
+            ],
+            [
+              121.41244,
+              12.6692222,
+              -16.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "STK-01",
+        "name": "Fine Sand Stockpile Area",
+        "type": "Stockpile",
+        "category": "Material Storage",
+        "status": "inactive",
+        "color": "#e3c28d",
+        "elevation": 8.5,
+        "extrusion_height": 8.5,
+        "estimated_volume_m3": 4200,
+        "description": "Aggregated washed fine river sand sorted for structural concrete and masonry dispatch."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4134233,
+              12.6693278,
+              8.5
+            ],
+            [
+              121.4138678,
+              12.6692055,
+              8.5
+            ],
+            [
+              121.4139906,
+              12.6696605,
+              8.5
+            ],
+            [
+              121.4135461,
+              12.6697828,
+              8.5
+            ],
+            [
+              121.4134233,
+              12.6693278,
+              8.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "STK-02",
+        "name": "Coarse Gravel & Aggregate Stockpile",
+        "type": "Stockpile",
+        "category": "Material Storage",
+        "status": "inactive",
+        "color": "#a3907c",
+        "elevation": 6.5,
+        "extrusion_height": 6.5,
+        "estimated_volume_m3": 3100,
+        "description": "Crushed and screened 3/4 and G1 river gravel aggregate inventory."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4132817,
+              12.6688028,
+              6.5
+            ],
+            [
+              121.4137261,
+              12.6686805,
+              6.5
+            ],
+            [
+              121.4138394,
+              12.6691005,
+              6.5
+            ],
+            [
+              121.413395,
+              12.6692228,
+              6.5
+            ],
+            [
+              121.4132817,
+              12.6688028,
+              6.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "PLT-01",
+        "name": "Mechanical Screening & Washing Plant",
+        "type": "Processing Facility",
+        "category": "Infrastructure",
+        "status": "inactive",
+        "color": "#3b4d61",
+        "elevation": 12.0,
+        "extrusion_height": 12.0,
+        "description": "Vibrating deck screen sorting raw riverbed materials into graded sand and aggregate classes."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4132289,
+              12.6697572,
+              12.0
+            ],
+            [
+              121.4134511,
+              12.6696961,
+              12.0
+            ],
+            [
+              121.4135172,
+              12.6699411,
+              12.0
+            ],
+            [
+              121.413295,
+              12.6700022,
+              12.0
+            ],
+            [
+              121.4132289,
+              12.6697572,
+              12.0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "FAC-01",
+        "name": "Weighbridge Station & Site Admin Office",
+        "type": "Administrative Facility",
+        "category": "Infrastructure",
+        "status": "inactive",
+        "color": "#2563eb",
+        "elevation": 4.5,
+        "extrusion_height": 4.5,
+        "description": "Truck scale, hauling record log desk, and driver dispatch checkpoint."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4122128,
+              12.6701494,
+              4.5
+            ],
+            [
+              121.4125239,
+              12.6700639,
+              4.5
+            ],
+            [
+              121.41259,
+              12.6703089,
+              4.5
+            ],
+            [
+              121.4122789,
+              12.6703944,
+              4.5
+            ],
+            [
+              121.4122128,
+              12.6701494,
+              4.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "ROD-01",
+        "name": "Internal Haul Road & Access Way",
+        "type": "Haul Road",
+        "category": "Transportation",
+        "status": "inactive",
+        "color": "#b45309",
+        "elevation": 0.5,
+        "extrusion_height": 0.5,
+        "description": "Graded compacted aggregate haul road connecting main highway access to pit and stockpiles."
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            121.4121125,
+            12.6703086,
+            0.5
+          ],
+          [
+            121.4124539,
+            12.6701583,
+            0.5
+          ],
+          [
+            121.4128653,
+            12.6699136,
+            0.5
+          ],
+          [
+            121.4132483,
+            12.6695639,
+            0.5
+          ],
+          [
+            121.4134139,
+            12.6692928,
+            0.5
+          ],
+          [
+            121.4128986,
+            12.6691525,
+            0.5
+          ],
+          [
+            121.4125625,
+            12.6690569,
+            0.5
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BUF-01",
+        "name": "Sediment Settling Pond & Silt Trap",
+        "type": "Environmental Control",
+        "category": "Environmental Buffer",
+        "status": "inactive",
+        "color": "#0891b2",
+        "elevation": -3.5,
+        "extrusion_height": -3.5,
+        "pit_depth": -3.5,
+        "description": "Silt retention basin ensuring clear wastewater runoff before discharge into riverbed."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4118378,
+              12.6689366,
+              -3.5
+            ],
+            [
+              121.4124156,
+              12.6687777,
+              -3.5
+            ],
+            [
+              121.4124722,
+              12.6689877,
+              -3.5
+            ],
+            [
+              121.4118945,
+              12.6691466,
+              -3.5
+            ],
+            [
+              121.4118378,
+              12.6689366,
+              -3.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "BUF-02",
+        "name": "Riparian Buffer & River Protection Strip",
+        "type": "Riparian Buffer",
+        "category": "Environmental Buffer",
+        "status": "inactive",
+        "color": "#15803d",
+        "elevation": 1.5,
+        "extrusion_height": 1.5,
+        "description": "20-meter vegetative riparian zone preserving riverbank stability and preventing bank erosion."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              121.4117206,
+              12.6688561,
+              1.5
+            ],
+            [
+              121.4138539,
+              12.6682694,
+              1.5
+            ],
+            [
+              121.4138775,
+              12.6683569,
+              1.5
+            ],
+            [
+              121.4117442,
+              12.6689436,
+              1.5
+            ],
+            [
+              121.4117206,
+              12.6688561,
+              1.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "SEN-01",
+        "name": "Hydrological & Riverbed Monitoring Station Alpha",
+        "type": "Telemetry Sensor",
+        "category": "Monitoring",
+        "status": "inactive",
+        "reading": "Normal (Water level +0.8m, Silt: Low)",
+        "color": "#6366f1",
+        "elevation": 1.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.41199,
+          12.66897,
+          1.5
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "CHK-01",
+        "name": "MENRO Verification Gate #1",
+        "type": "Inspection Checkpoint",
+        "category": "Compliance",
+        "status": "inactive",
+        "color": "#ef4444",
+        "elevation": 2.0
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4121933,
+          12.6703427,
+          2.0
+        ]
+      }
+    }
+  ]
+}

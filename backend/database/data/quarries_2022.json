@@ -1,0 +1,3874 @@
+[
+  {
+    "id": 1,
+    "name": "Samson Corpuz",
+    "operator_name": "Samson Corpuz",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6694027,
+    "longitude": 121.4130139,
+    "area_hectares": 5.02,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6705833,
+        121.4121389
+      ],
+      [
+        12.6699722,
+        121.4143611
+      ],
+      [
+        12.6682222,
+        121.4138889
+      ],
+      [
+        12.6688333,
+        121.4116667
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_1.geojson"
+  },
+  {
+    "id": 2,
+    "name": "Rufino Lumbres",
+    "operator_name": "Rufino Lumbres",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6696186,
+    "longitude": 121.4100425,
+    "area_hectares": 4.3,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6708828,
+        121.4089206
+      ],
+      [
+        12.6696717,
+        121.4119075
+      ],
+      [
+        12.6688406,
+        121.4116839
+      ],
+      [
+        12.668935,
+        121.4112575
+      ],
+      [
+        12.6692039,
+        121.410285
+      ],
+      [
+        12.6689553,
+        121.4102078
+      ],
+      [
+        12.6697078,
+        121.4088942
+      ],
+      [
+        12.6698672,
+        121.4084725
+      ],
+      [
+        12.6705033,
+        121.4087533
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_2.geojson"
+  },
+  {
+    "id": 3,
+    "name": "Mhoniel Rejaba",
+    "operator_name": "Mhoniel Rejaba",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6758118,
+    "longitude": 121.4016423,
+    "area_hectares": 3.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.676225,
+        121.4003694
+      ],
+      [
+        12.6762278,
+        121.4031583
+      ],
+      [
+        12.6751667,
+        121.4030722
+      ],
+      [
+        12.6756278,
+        121.3999694
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_3.geojson"
+  },
+  {
+    "id": 4,
+    "name": "Mark Ariel Vargas",
+    "operator_name": "Mark Ariel Vargas",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6733722,
+    "longitude": 121.4085422,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6746111,
+        121.408175
+      ],
+      [
+        12.6738083,
+        121.4102111
+      ],
+      [
+        12.6721528,
+        121.4094806
+      ],
+      [
+        12.6729139,
+        121.4073139
+      ],
+      [
+        12.673375,
+        121.4075306
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_4.geojson"
+  },
+  {
+    "id": 5,
+    "name": "Jose Ilao",
+    "operator_name": "Jose Ilao",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6759266,
+    "longitude": 121.4029181,
+    "area_hectares": 3.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6764372,
+        121.4003928
+      ],
+      [
+        12.6764275,
+        121.4043392
+      ],
+      [
+        12.6760358,
+        121.4046122
+      ],
+      [
+        12.6749608,
+        121.4044781
+      ],
+      [
+        12.6751692,
+        121.4030722
+      ],
+      [
+        12.6762289,
+        121.4031603
+      ],
+      [
+        12.6762267,
+        121.4003719
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_5.geojson"
+  },
+  {
+    "id": 6,
+    "name": "Glenn de Guzman",
+    "operator_name": "Glenn de Guzman",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6687986,
+    "longitude": 121.4152361,
+    "area_hectares": 5.05,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6699722,
+        121.4143611
+      ],
+      [
+        12.6693889,
+        121.4165833
+      ],
+      [
+        12.6676111,
+        121.4161111
+      ],
+      [
+        12.6682222,
+        121.4138889
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_6.geojson"
+  },
+  {
+    "id": 7,
+    "name": "Fernan Correa",
+    "operator_name": "Fernan Correa",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6710195,
+    "longitude": 121.4103461,
+    "area_hectares": 5.01,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6721528,
+        121.4094806
+      ],
+      [
+        12.6709139,
+        121.4122417
+      ],
+      [
+        12.6696694,
+        121.4119056
+      ],
+      [
+        12.6708806,
+        121.4089194
+      ],
+      [
+        12.6714806,
+        121.4091833
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_7.geojson"
+  },
+  {
+    "id": 8,
+    "name": "Cristeta Corpuz",
+    "operator_name": "Cristeta Corpuz",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6711528,
+    "longitude": 121.4134861,
+    "area_hectares": 5.02,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6723333,
+        121.4126111
+      ],
+      [
+        12.6717222,
+        121.4148333
+      ],
+      [
+        12.6699722,
+        121.4143611
+      ],
+      [
+        12.6705833,
+        121.4121389
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_8.geojson"
+  },
+  {
+    "id": 9,
+    "name": "Claire Sison",
+    "operator_name": "Claire Sison",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6700043,
+    "longitude": 121.4182407,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6707181,
+        121.4169506
+      ],
+      [
+        12.6706939,
+        121.4198681
+      ],
+      [
+        12.6694289,
+        121.4196061
+      ],
+      [
+        12.6691764,
+        121.4165378
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_9.geojson"
+  },
+  {
+    "id": 10,
+    "name": "Arjay Vargas",
+    "operator_name": "Arjay Vargas",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.672209,
+    "longitude": 121.4110972,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6734333,
+        121.4100444
+      ],
+      [
+        12.6723361,
+        121.4126222
+      ],
+      [
+        12.6709139,
+        121.4122417
+      ],
+      [
+        12.6721528,
+        121.4094806
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_10.geojson"
+  },
+  {
+    "id": 11,
+    "name": "Pedro Reyes",
+    "operator_name": "Pedro Reyes",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6684338,
+    "longitude": 121.4043905,
+    "area_hectares": 2.81,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6700803,
+        121.4043467
+      ],
+      [
+        12.669355,
+        121.405345
+      ],
+      [
+        12.6686086,
+        121.404885
+      ],
+      [
+        12.6678861,
+        121.4043878
+      ],
+      [
+        12.6671903,
+        121.4039092
+      ],
+      [
+        12.6674822,
+        121.4034692
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_11.geojson"
+  },
+  {
+    "id": 12,
+    "name": "Florencia Gavina",
+    "operator_name": "Florencia Gavina",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6878014,
+    "longitude": 121.3834932,
+    "area_hectares": 5.03,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6890403,
+        121.3823981
+      ],
+      [
+        12.6878333,
+        121.3853381
+      ],
+      [
+        12.6865928,
+        121.3847586
+      ],
+      [
+        12.6872258,
+        121.3831286
+      ],
+      [
+        12.688315,
+        121.3818425
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_12.geojson"
+  },
+  {
+    "id": 13,
+    "name": "Vhone Delos Reyes",
+    "operator_name": "Vhone Delos Reyes",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6868149,
+    "longitude": 121.3866572,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6878333,
+        121.3853381
+      ],
+      [
+        12.6875742,
+        121.3859944
+      ],
+      [
+        12.6873817,
+        121.3862528
+      ],
+      [
+        12.6865519,
+        121.3880858
+      ],
+      [
+        12.6863872,
+        121.3882989
+      ],
+      [
+        12.6853833,
+        121.3878719
+      ],
+      [
+        12.6865928,
+        121.3847586
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_13.geojson"
+  },
+  {
+    "id": 14,
+    "name": "Benigno Dimapilis",
+    "operator_name": "Benigno Dimapilis",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6677778,
+    "longitude": 121.4227917,
+    "area_hectares": 5.02,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6688611,
+        121.4215833
+      ],
+      [
+        12.6686111,
+        121.4238611
+      ],
+      [
+        12.6667222,
+        121.4239167
+      ],
+      [
+        12.6669167,
+        121.4218056
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_14.geojson"
+  },
+  {
+    "id": 15,
+    "name": "Christopher Dimapilis",
+    "operator_name": "Christopher Dimapilis",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6696389,
+    "longitude": 121.4227153,
+    "area_hectares": 5.13,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6706667,
+        121.4216389
+      ],
+      [
+        12.6704167,
+        121.4239167
+      ],
+      [
+        12.6686111,
+        121.4238611
+      ],
+      [
+        12.6688611,
+        121.4214444
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_15.geojson"
+  },
+  {
+    "id": 16,
+    "name": "King Philip Dimapilis",
+    "operator_name": "King Philip Dimapilis",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6693889,
+    "longitude": 121.4250347,
+    "area_hectares": 4.99,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6704167,
+        121.4239167
+      ],
+      [
+        12.6701667,
+        121.4261944
+      ],
+      [
+        12.6683611,
+        121.4261667
+      ],
+      [
+        12.6686111,
+        121.4238611
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_16.geojson"
+  },
+  {
+    "id": 17,
+    "name": "Jeric Ocampo",
+    "operator_name": "Jeric Ocampo",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6726597,
+    "longitude": 121.4061806,
+    "area_hectares": 5.06,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6738889,
+        121.4059444
+      ],
+      [
+        12.6733611,
+        121.4075278
+      ],
+      [
+        12.6707778,
+        121.4063333
+      ],
+      [
+        12.6726111,
+        121.4049167
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_17.geojson"
+  },
+  {
+    "id": 18,
+    "name": "Mark Guevarra",
+    "operator_name": "Mark Guevarra",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Isidro, Bongabong, Oriental Mindoro.",
+    "barangay": "San Isidro",
+    "address": "Brgy. San Isidro, Bongabong, Oriental Mindoro",
+    "latitude": 12.706338,
+    "longitude": 121.4983472,
+    "area_hectares": 4.97,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.7081417,
+        121.4980278
+      ],
+      [
+        12.7064306,
+        121.4999722
+      ],
+      [
+        12.7050139,
+        121.4986389
+      ],
+      [
+        12.7052944,
+        121.49825
+      ],
+      [
+        12.705975,
+        121.4974722
+      ],
+      [
+        12.7071722,
+        121.4977222
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_18.geojson"
+  },
+  {
+    "id": 19,
+    "name": "Rizalito Sescar",
+    "operator_name": "Rizalito Sescar",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Isidro, Bongabong, Oriental Mindoro.",
+    "barangay": "San Isidro",
+    "address": "Brgy. San Isidro, Bongabong, Oriental Mindoro",
+    "latitude": 12.7035417,
+    "longitude": 121.4996018,
+    "area_hectares": 1.67,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.7045,
+        121.4990833
+      ],
+      [
+        12.704,
+        121.4997222
+      ],
+      [
+        12.70325,
+        121.5002778
+      ],
+      [
+        12.7030833,
+        121.5000833
+      ],
+      [
+        12.7026667,
+        121.4997778
+      ],
+      [
+        12.70375,
+        121.4986667
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_19.geojson"
+  },
+  {
+    "id": 20,
+    "name": "Richo James Ocampo",
+    "operator_name": "Richo James Ocampo",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.67022,
+    "longitude": 121.4070939,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6712722,
+        121.4065556
+      ],
+      [
+        12.6705028,
+        121.4087528
+      ],
+      [
+        12.6693528,
+        121.4082444
+      ],
+      [
+        12.6691806,
+        121.4055833
+      ],
+      [
+        12.6707917,
+        121.4063333
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_20.geojson"
+  },
+  {
+    "id": 21,
+    "name": "Jesse Emmanuel Dimatulac",
+    "operator_name": "Jesse Emmanuel Dimatulac",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6696236,
+    "longitude": 121.4206146,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6706917,
+        121.4198667
+      ],
+      [
+        12.6706778,
+        121.4216389
+      ],
+      [
+        12.6688667,
+        121.4215889
+      ],
+      [
+        12.6682583,
+        121.4193639
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_21.geojson"
+  },
+  {
+    "id": 22,
+    "name": "May Payumo",
+    "operator_name": "May Payumo",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6846285,
+    "longitude": 121.3915792,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6851167,
+        121.3899306
+      ],
+      [
+        12.6859444,
+        121.3921417
+      ],
+      [
+        12.6838528,
+        121.393
+      ],
+      [
+        12.6836,
+        121.3912444
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_22.geojson"
+  },
+  {
+    "id": 23,
+    "name": "Ireneo Manalo",
+    "operator_name": "Ireneo Manalo",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6670861,
+    "longitude": 121.4172243,
+    "area_hectares": 4.86,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6676139,
+        121.4161194
+      ],
+      [
+        12.6682583,
+        121.4190861
+      ],
+      [
+        12.6667917,
+        121.4181333
+      ],
+      [
+        12.6656806,
+        121.4155583
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_23.geojson"
+  },
+  {
+    "id": 24,
+    "name": "Arlene Abante",
+    "operator_name": "Arlene Abante",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Isidro, Bongabong, Oriental Mindoro.",
+    "barangay": "San Isidro",
+    "address": "Brgy. San Isidro, Bongabong, Oriental Mindoro",
+    "latitude": 12.7024139,
+    "longitude": 121.4988829,
+    "area_hectares": 3.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.7037167,
+        121.4981361
+      ],
+      [
+        12.7026917,
+        121.4997917
+      ],
+      [
+        12.7019639,
+        121.4996028
+      ],
+      [
+        12.7015667,
+        121.4991389
+      ],
+      [
+        12.7011444,
+        121.4988639
+      ],
+      [
+        12.7034,
+        121.4977639
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_24.geojson"
+  },
+  {
+    "id": 25,
+    "name": "Florentina Aldave",
+    "operator_name": "Florentina Aldave",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6772239,
+    "longitude": 121.4860417,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6788472,
+        121.4852417
+      ],
+      [
+        12.6787861,
+        121.4871972
+      ],
+      [
+        12.6776778,
+        121.4862528
+      ],
+      [
+        12.6754417,
+        121.4863222
+      ],
+      [
+        12.6753667,
+        121.4851944
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_25.geojson"
+  },
+  {
+    "id": 26,
+    "name": "Julius Arellano",
+    "operator_name": "Julius Arellano",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6722028,
+    "longitude": 121.4082479,
+    "area_hectares": 2.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6729139,
+        121.4073139
+      ],
+      [
+        12.6721528,
+        121.4094806
+      ],
+      [
+        12.6714806,
+        121.4091833
+      ],
+      [
+        12.6722639,
+        121.4070139
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_26.geojson"
+  },
+  {
+    "id": 27,
+    "name": "Aida Danaytan",
+    "operator_name": "Aida Danaytan",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6713799,
+    "longitude": 121.4078764,
+    "area_hectares": 3.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6722639,
+        121.4070139
+      ],
+      [
+        12.6714806,
+        121.4091833
+      ],
+      [
+        12.6705028,
+        121.4087528
+      ],
+      [
+        12.6712722,
+        121.4065556
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_27.geojson"
+  },
+  {
+    "id": 28,
+    "name": "Reynante Dela Roca Panes",
+    "operator_name": "Reynante Dela Roca Panes",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6794486,
+    "longitude": 121.4905479,
+    "area_hectares": 5.33,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6801139,
+        121.4888639
+      ],
+      [
+        12.6800944,
+        121.4922667
+      ],
+      [
+        12.6787472,
+        121.4922083
+      ],
+      [
+        12.6788389,
+        121.4888528
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_28.geojson"
+  },
+  {
+    "id": 29,
+    "name": "Alvin Jandumon",
+    "operator_name": "Alvin Jandumon",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Hagan, Bongabong, Oriental Mindoro.",
+    "barangay": "Hagan",
+    "address": "Brgy. Hagan, Bongabong, Oriental Mindoro",
+    "latitude": 12.6939062,
+    "longitude": 121.3716709,
+    "area_hectares": 4.9,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6948111,
+        121.3704139
+      ],
+      [
+        12.6953111,
+        121.3719667
+      ],
+      [
+        12.6928444,
+        121.3729972
+      ],
+      [
+        12.6926583,
+        121.3713056
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_29.geojson"
+  },
+  {
+    "id": 30,
+    "name": "Aileen Magparangalan",
+    "operator_name": "Aileen Magparangalan",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6914706,
+    "longitude": 121.3761881,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6924719,
+        121.3747392
+      ],
+      [
+        12.6913278,
+        121.3787039
+      ],
+      [
+        12.6905053,
+        121.3771414
+      ],
+      [
+        12.6915772,
+        121.3741678
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_30.geojson"
+  },
+  {
+    "id": 31,
+    "name": "Jim Fernando",
+    "operator_name": "Jim Fernando",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6852754,
+    "longitude": 121.4944452,
+    "area_hectares": 4.81,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6866306,
+        121.4935833
+      ],
+      [
+        12.6862528,
+        121.4961611
+      ],
+      [
+        12.6850306,
+        121.4953
+      ],
+      [
+        12.6847861,
+        121.4946861
+      ],
+      [
+        12.6844611,
+        121.4944361
+      ],
+      [
+        12.6844722,
+        121.4935889
+      ],
+      [
+        12.6852944,
+        121.4933611
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_31.geojson"
+  },
+  {
+    "id": 32,
+    "name": "Herbert Dalida",
+    "operator_name": "Herbert Dalida",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6826799,
+    "longitude": 121.3925646,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6838528,
+        121.393
+      ],
+      [
+        12.6819556,
+        121.3939111
+      ],
+      [
+        12.6813333,
+        121.3922778
+      ],
+      [
+        12.6835778,
+        121.3910694
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_32.geojson"
+  },
+  {
+    "id": 33,
+    "name": "Juanito Dalida",
+    "operator_name": "Juanito Dalida",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6805417,
+    "longitude": 121.3936549,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6819556,
+        121.3939111
+      ],
+      [
+        12.6797306,
+        121.3949778
+      ],
+      [
+        12.6791472,
+        121.3934528
+      ],
+      [
+        12.6813333,
+        121.3922778
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_33.geojson"
+  },
+  {
+    "id": 34,
+    "name": "Edmar Rover",
+    "operator_name": "Edmar Rover",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.67845,
+    "longitude": 121.3950569,
+    "area_hectares": 5.24,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6791472,
+        121.3934528
+      ],
+      [
+        12.6797306,
+        121.3949778
+      ],
+      [
+        12.6780556,
+        121.3965861
+      ],
+      [
+        12.6768667,
+        121.3952111
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_34.geojson"
+  },
+  {
+    "id": 35,
+    "name": "Marcelo Santiago",
+    "operator_name": "Marcelo Santiago",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6671859,
+    "longitude": 121.4134159,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6685278,
+        121.4128139
+      ],
+      [
+        12.6679056,
+        121.4150583
+      ],
+      [
+        12.6661214,
+        121.4136192
+      ],
+      [
+        12.6661889,
+        121.4121722
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_35.geojson"
+  },
+  {
+    "id": 36,
+    "name": "Joey Macato",
+    "operator_name": "Joey Macato",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6727625,
+    "longitude": 121.4387421,
+    "area_hectares": 4.49,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6737694,
+        121.4378444
+      ],
+      [
+        12.6738889,
+        121.4393361
+      ],
+      [
+        12.6738639,
+        121.4395833
+      ],
+      [
+        12.6716528,
+        121.439525
+      ],
+      [
+        12.6717,
+        121.438375
+      ],
+      [
+        12.6717,
+        121.4377889
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_36.geojson"
+  },
+  {
+    "id": 37,
+    "name": "Victoria Borgueta",
+    "operator_name": "Victoria Borgueta",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6726972,
+    "longitude": 121.4368798,
+    "area_hectares": 4.49,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6736222,
+        121.4359694
+      ],
+      [
+        12.6737694,
+        121.4378444
+      ],
+      [
+        12.6717,
+        121.4377889
+      ],
+      [
+        12.6716972,
+        121.4359167
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_37.geojson"
+  },
+  {
+    "id": 38,
+    "name": "Enry Espititu",
+    "operator_name": "Enry Espititu",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6670022,
+    "longitude": 121.4637345,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6682083,
+        121.4631528
+      ],
+      [
+        12.6681306,
+        121.4646167
+      ],
+      [
+        12.6652444,
+        121.4646
+      ],
+      [
+        12.6653889,
+        121.46315
+      ],
+      [
+        12.6680389,
+        121.4631528
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_38.geojson"
+  },
+  {
+    "id": 39,
+    "name": "Arnold Vargas",
+    "operator_name": "Arnold Vargas",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6781298,
+    "longitude": 121.4873757,
+    "area_hectares": 2.82,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6789083,
+        121.4873028
+      ],
+      [
+        12.6788972,
+        121.4889306
+      ],
+      [
+        12.67695,
+        121.4869417
+      ],
+      [
+        12.6777639,
+        121.4863278
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_39.geojson"
+  },
+  {
+    "id": 40,
+    "name": "Omar Christopher Gaid",
+    "operator_name": "Omar Christopher Gaid",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6725764,
+    "longitude": 121.4349958,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6736222,
+        121.4359694
+      ],
+      [
+        12.6716972,
+        121.4359167
+      ],
+      [
+        12.67125,
+        121.433975
+      ],
+      [
+        12.6737361,
+        121.4341222
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_40.geojson"
+  },
+  {
+    "id": 41,
+    "name": "Athena Malaluan",
+    "operator_name": "Athena Malaluan",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Kaligtasan, Bongabong, Oriental Mindoro.",
+    "barangay": "Kaligtasan",
+    "address": "Brgy. Kaligtasan, Bongabong, Oriental Mindoro",
+    "latitude": 12.6662833,
+    "longitude": 121.4692403,
+    "area_hectares": 5.01,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6662778,
+        121.4677972
+      ],
+      [
+        12.6676639,
+        121.4699028
+      ],
+      [
+        12.6662222,
+        121.4708583
+      ],
+      [
+        12.6649694,
+        121.4684028
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_41.geojson"
+  },
+  {
+    "id": 42,
+    "name": "Maria Gillan Villones",
+    "operator_name": "Maria Gillan Villones",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6695972,
+    "longitude": 121.4033789,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6708806,
+        121.4030917
+      ],
+      [
+        12.6703333,
+        121.4039972
+      ],
+      [
+        12.6700778,
+        121.4043444
+      ],
+      [
+        12.6675417,
+        121.4034861
+      ],
+      [
+        12.6691528,
+        121.401975
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_42.geojson"
+  },
+  {
+    "id": 43,
+    "name": "Anthony Yap",
+    "operator_name": "Anthony Yap",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6727615,
+    "longitude": 121.3996643,
+    "area_hectares": 4.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6734833,
+        121.3979667
+      ],
+      [
+        12.6744111,
+        121.3987222
+      ],
+      [
+        12.6728083,
+        121.400575
+      ],
+      [
+        12.6725889,
+        121.4004
+      ],
+      [
+        12.6723611,
+        121.4007
+      ],
+      [
+        12.6715694,
+        121.3997861
+      ],
+      [
+        12.6721083,
+        121.3995
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_43.geojson"
+  },
+  {
+    "id": 44,
+    "name": "Zeus Tumaneng",
+    "operator_name": "Zeus Tumaneng",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6874083,
+    "longitude": 121.4971035,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6885444,
+        121.4962306
+      ],
+      [
+        12.6885639,
+        121.4980444
+      ],
+      [
+        12.6862722,
+        121.4979778
+      ],
+      [
+        12.6862528,
+        121.4961611
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_44.geojson"
+  },
+  {
+    "id": 45,
+    "name": "Sammy Garcia",
+    "operator_name": "Sammy Garcia",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6640294,
+    "longitude": 121.4623861,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6652611,
+        121.4612361
+      ],
+      [
+        12.6651083,
+        121.4634139
+      ],
+      [
+        12.6633917,
+        121.4634806
+      ],
+      [
+        12.6633833,
+        121.4625
+      ],
+      [
+        12.6630028,
+        121.4613
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_45.geojson"
+  },
+  {
+    "id": 46,
+    "name": "Jocylen Pachica",
+    "operator_name": "Jocylen Pachica",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6638917,
+    "longitude": 121.4603067,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6654111,
+        121.4596111
+      ],
+      [
+        12.6652611,
+        121.4612361
+      ],
+      [
+        12.6630028,
+        121.4613
+      ],
+      [
+        12.6624944,
+        121.4596944
+      ],
+      [
+        12.6632889,
+        121.4596917
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_46.geojson"
+  },
+  {
+    "id": 47,
+    "name": "Patricia Claire Yap",
+    "operator_name": "Patricia Claire Yap",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.672613,
+    "longitude": 121.4018746,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6725889,
+        121.4004011
+      ],
+      [
+        12.6740194,
+        121.4015272
+      ],
+      [
+        12.6729136,
+        121.4029839
+      ],
+      [
+        12.6709303,
+        121.4025864
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_47.geojson"
+  },
+  {
+    "id": 48,
+    "name": "Leoniba Ibanez",
+    "operator_name": "Leoniba Ibanez",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.671824,
+    "longitude": 121.4034776,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6732711,
+        121.4032692
+      ],
+      [
+        12.6726144,
+        121.4049367
+      ],
+      [
+        12.6703339,
+        121.4039975
+      ],
+      [
+        12.6708808,
+        121.4030919
+      ],
+      [
+        12.6709303,
+        121.4025864
+      ],
+      [
+        12.6729136,
+        121.4029839
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_48.geojson"
+  },
+  {
+    "id": 49,
+    "name": "Ivan Tantay",
+    "operator_name": "Ivan Tantay",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6686191,
+    "longitude": 121.4179048,
+    "area_hectares": 5.01,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6691764,
+        121.4165378
+      ],
+      [
+        12.6694289,
+        121.4196061
+      ],
+      [
+        12.66826,
+        121.4193642
+      ],
+      [
+        12.6676111,
+        121.4161111
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_49.geojson"
+  },
+  {
+    "id": 50,
+    "name": "Gil de Guzman Sarmiento",
+    "operator_name": "Gil de Guzman Sarmiento",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.670929,
+    "longitude": 121.4782606,
+    "area_hectares": 6.56,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6726458,
+        121.4775403
+      ],
+      [
+        12.6726478,
+        121.47911
+      ],
+      [
+        12.6718944,
+        121.4791072
+      ],
+      [
+        12.6707572,
+        121.4791058
+      ],
+      [
+        12.6706264,
+        121.4789686
+      ],
+      [
+        12.6698767,
+        121.4783244
+      ],
+      [
+        12.6696528,
+        121.4779544
+      ],
+      [
+        12.6695211,
+        121.4775322
+      ],
+      [
+        12.6707386,
+        121.4767022
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_50.geojson"
+  },
+  {
+    "id": 51,
+    "name": "Marlon Estrella",
+    "operator_name": "Marlon Estrella",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6681197,
+    "longitude": 121.4495512,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6695628,
+        121.4489717
+      ],
+      [
+        12.6686117,
+        121.4508317
+      ],
+      [
+        12.6664117,
+        121.4499808
+      ],
+      [
+        12.6678928,
+        121.4484208
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_51.geojson"
+  },
+  {
+    "id": 52,
+    "name": "Escolastica Juayno",
+    "operator_name": "Escolastica Juayno",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6650188,
+    "longitude": 121.4537734,
+    "area_hectares": 4.19,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6661258,
+        121.4522803
+      ],
+      [
+        12.6650114,
+        121.4557836
+      ],
+      [
+        12.66353,
+        121.4559714
+      ],
+      [
+        12.6646736,
+        121.4541592
+      ],
+      [
+        12.6653714,
+        121.4522889
+      ],
+      [
+        12.6654006,
+        121.4521572
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_52.geojson"
+  },
+  {
+    "id": 53,
+    "name": "Sunshine Ferran",
+    "operator_name": "Sunshine Ferran",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6753229,
+    "longitude": 121.3977287,
+    "area_hectares": 4.01,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6734856,
+        121.3979678
+      ],
+      [
+        12.673685,
+        121.3977261
+      ],
+      [
+        12.6744536,
+        121.3983392
+      ],
+      [
+        12.6759078,
+        121.3971003
+      ],
+      [
+        12.676095,
+        121.3972531
+      ],
+      [
+        12.6766725,
+        121.3967608
+      ],
+      [
+        12.6772178,
+        121.3974247
+      ],
+      [
+        12.6750661,
+        121.3992578
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_53.geojson"
+  },
+  {
+    "id": 54,
+    "name": "Petronilo Noche",
+    "operator_name": "Petronilo Noche",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6767272,
+    "longitude": 121.3946411,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6748792,
+        121.3961922
+      ],
+      [
+        12.6747083,
+        121.3960531
+      ],
+      [
+        12.6763631,
+        121.3941186
+      ],
+      [
+        12.6785972,
+        121.3925986
+      ],
+      [
+        12.6791475,
+        121.3934531
+      ],
+      [
+        12.6768675,
+        121.3952125
+      ],
+      [
+        12.6765278,
+        121.3948594
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_54.geojson"
+  },
+  {
+    "id": 55,
+    "name": "Kathleen Mae Fajarito",
+    "operator_name": "Kathleen Mae Fajarito",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.680342,
+    "longitude": 121.4884639,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6788981,
+        121.4888511
+      ],
+      [
+        12.6789083,
+        121.4876083
+      ],
+      [
+        12.6820139,
+        121.4875467
+      ],
+      [
+        12.6820019,
+        121.4889661
+      ],
+      [
+        12.6801147,
+        121.488945
+      ],
+      [
+        12.6801153,
+        121.4888661
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_55.geojson"
+  },
+  {
+    "id": 56,
+    "name": "Rodrigo Domingo, Jr.",
+    "operator_name": "Rodrigo Domingo, Jr.",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6674728,
+    "longitude": 121.4735019,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6683292,
+        121.4725444
+      ],
+      [
+        12.6682411,
+        121.4732472
+      ],
+      [
+        12.6682264,
+        121.4746564
+      ],
+      [
+        12.6662728,
+        121.4745881
+      ],
+      [
+        12.6662947,
+        121.4724733
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_56.geojson"
+  },
+  {
+    "id": 57,
+    "name": "Manilyn Jagong",
+    "operator_name": "Manilyn Jagong",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6785542,
+    "longitude": 121.3906824,
+    "area_hectares": 4.4,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6783181,
+        121.38914
+      ],
+      [
+        12.6802628,
+        121.3892111
+      ],
+      [
+        12.6787439,
+        121.3899139
+      ],
+      [
+        12.6785694,
+        121.3913231
+      ],
+      [
+        12.6782506,
+        121.3928344
+      ],
+      [
+        12.6771806,
+        121.3916717
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_57.geojson"
+  },
+  {
+    "id": 58,
+    "name": "Renniel Castillano",
+    "operator_name": "Renniel Castillano",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6831515,
+    "longitude": 121.3835192,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6811994,
+        121.3835975
+      ],
+      [
+        12.6828942,
+        121.3817619
+      ],
+      [
+        12.6836983,
+        121.3825442
+      ],
+      [
+        12.6832683,
+        121.3838233
+      ],
+      [
+        12.6834119,
+        121.3839569
+      ],
+      [
+        12.6835636,
+        121.3836914
+      ],
+      [
+        12.6839011,
+        121.3839494
+      ],
+      [
+        12.6832756,
+        121.3848292
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_58.geojson"
+  },
+  {
+    "id": 59,
+    "name": "Annabelle Ugbinada",
+    "operator_name": "Annabelle Ugbinada",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6713664,
+    "longitude": 121.400708,
+    "area_hectares": 2.95,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6715694,
+        121.3997872
+      ],
+      [
+        12.6723622,
+        121.4007
+      ],
+      [
+        12.6714047,
+        121.4019611
+      ],
+      [
+        12.6701294,
+        121.4003836
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_59.geojson"
+  },
+  {
+    "id": 60,
+    "name": "Teodorico Ramirez",
+    "operator_name": "Teodorico Ramirez",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Poblacion, Bongabong, Oriental Mindoro.",
+    "barangay": "Poblacion",
+    "address": "Brgy. Poblacion, Bongabong, Oriental Mindoro",
+    "latitude": 12.7168297,
+    "longitude": 121.5048556,
+    "area_hectares": 4.75,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.7164103,
+        121.5028047
+      ],
+      [
+        12.7166792,
+        121.5026747
+      ],
+      [
+        12.7174342,
+        121.5044431
+      ],
+      [
+        12.7179728,
+        121.50633
+      ],
+      [
+        12.7174328,
+        121.5065872
+      ],
+      [
+        12.7168097,
+        121.5062794
+      ],
+      [
+        12.7165258,
+        121.5054531
+      ],
+      [
+        12.7160211,
+        121.50502
+      ],
+      [
+        12.7161814,
+        121.5041083
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_60.geojson"
+  },
+  {
+    "id": 61,
+    "name": "Mayra Lopez",
+    "operator_name": "Mayra Lopez",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6713068,
+    "longitude": 121.4319732,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6730261,
+        121.4325667
+      ],
+      [
+        12.6701608,
+        121.4329361
+      ],
+      [
+        12.6698383,
+        121.4311706
+      ],
+      [
+        12.6722019,
+        121.4312194
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_61.geojson"
+  },
+  {
+    "id": 62,
+    "name": "Casiano de Torres",
+    "operator_name": "Casiano de Torres",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6718093,
+    "longitude": 121.4336594,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6730261,
+        121.4325667
+      ],
+      [
+        12.6737361,
+        121.4341247
+      ],
+      [
+        12.6712503,
+        121.4339753
+      ],
+      [
+        12.6708731,
+        121.4346942
+      ],
+      [
+        12.6701608,
+        121.4329361
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_62.geojson"
+  },
+  {
+    "id": 63,
+    "name": "Redentor Mameng",
+    "operator_name": "Redentor Mameng",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6805689,
+    "longitude": 121.3918062,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6787786,
+        121.3927939
+      ],
+      [
+        12.6802628,
+        121.3914258
+      ],
+      [
+        12.6810753,
+        121.3913892
+      ],
+      [
+        12.6818294,
+        121.390025
+      ],
+      [
+        12.6823197,
+        121.39175
+      ],
+      [
+        12.6791475,
+        121.3934531
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_63.geojson"
+  },
+  {
+    "id": 64,
+    "name": "Michel Cruz",
+    "operator_name": "Michel Cruz",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6901728,
+    "longitude": 121.383708,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6896453,
+        121.3807478
+      ],
+      [
+        12.6898344,
+        121.3807175
+      ],
+      [
+        12.6915503,
+        121.3839769
+      ],
+      [
+        12.6902197,
+        121.3866142
+      ],
+      [
+        12.6894356,
+        121.3863858
+      ],
+      [
+        12.6905678,
+        121.3852478
+      ],
+      [
+        12.6899564,
+        121.3822658
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_64.geojson"
+  },
+  {
+    "id": 65,
+    "name": "Mark Anthony Gado",
+    "operator_name": "Mark Anthony Gado",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6895947,
+    "longitude": 121.3850087,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6899564,
+        121.3822658
+      ],
+      [
+        12.6905678,
+        121.3852478
+      ],
+      [
+        12.6894356,
+        121.3863606
+      ],
+      [
+        12.6884189,
+        121.3861608
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_65.geojson"
+  },
+  {
+    "id": 66,
+    "name": "Mary Jane Gado",
+    "operator_name": "Mary Jane Gado",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6911767,
+    "longitude": 121.3796296,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6904803,
+        121.3770939
+      ],
+      [
+        12.6921961,
+        121.3803536
+      ],
+      [
+        12.6918733,
+        121.3821653
+      ],
+      [
+        12.6901572,
+        121.3789056
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_66.geojson"
+  },
+  {
+    "id": 67,
+    "name": "Mary Nel Gado",
+    "operator_name": "Mary Nel Gado",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6888988,
+    "longitude": 121.3837922,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6896453,
+        121.3807478
+      ],
+      [
+        12.6899564,
+        121.3822658
+      ],
+      [
+        12.6884192,
+        121.3861606
+      ],
+      [
+        12.6875742,
+        121.3859944
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_67.geojson"
+  },
+  {
+    "id": 68,
+    "name": "Jayson De Castro",
+    "operator_name": "Jayson De Castro",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6741655,
+    "longitude": 121.4023911,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6755333,
+        121.4006111
+      ],
+      [
+        12.6750944,
+        121.4035694
+      ],
+      [
+        12.6732694,
+        121.4032667
+      ],
+      [
+        12.6729111,
+        121.4029833
+      ],
+      [
+        12.6740194,
+        121.401525
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_68.geojson"
+  },
+  {
+    "id": 69,
+    "name": "Melchor Espero",
+    "operator_name": "Melchor Espero",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6705277,
+    "longitude": 121.4157014,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6699722,
+        121.4143611
+      ],
+      [
+        12.6717222,
+        121.4148333
+      ],
+      [
+        12.6710833,
+        121.4170278
+      ],
+      [
+        12.6693333,
+        121.4165833
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_69.geojson"
+  },
+  {
+    "id": 70,
+    "name": "Jose Lumanglas",
+    "operator_name": "Jose Lumanglas",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6766211,
+    "longitude": 121.3964987,
+    "area_hectares": 5.09,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6748792,
+        121.3961922
+      ],
+      [
+        12.6765278,
+        121.3948583
+      ],
+      [
+        12.6782917,
+        121.3966917
+      ],
+      [
+        12.6772583,
+        121.3973889
+      ],
+      [
+        12.6766778,
+        121.3966806
+      ],
+      [
+        12.6760917,
+        121.3971806
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_70.geojson"
+  },
+  {
+    "id": 71,
+    "name": "Deanmark Brandon Gaad",
+    "operator_name": "Deanmark Brandon Gaad",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6876896,
+    "longitude": 121.3875861,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6891944,
+        121.3867361
+      ],
+      [
+        12.6876333,
+        121.3892722
+      ],
+      [
+        12.68655,
+        121.3880833
+      ],
+      [
+        12.6873806,
+        121.3862528
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_71.geojson"
+  },
+  {
+    "id": 72,
+    "name": "John Carlo Aquino",
+    "operator_name": "John Carlo Aquino",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6676434,
+    "longitude": 121.4559609,
+    "area_hectares": 5.09,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6672208,
+        121.4546736
+      ],
+      [
+        12.6677936,
+        121.4548789
+      ],
+      [
+        12.6686742,
+        121.4549658
+      ],
+      [
+        12.6685858,
+        121.4552417
+      ],
+      [
+        12.6682419,
+        121.4563114
+      ],
+      [
+        12.6675764,
+        121.4579733
+      ],
+      [
+        12.6663661,
+        121.4573058
+      ],
+      [
+        12.6666883,
+        121.4563369
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_72.geojson"
+  },
+  {
+    "id": 73,
+    "name": "Eledel Lainez",
+    "operator_name": "Eledel Lainez",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Hagan, Bongabong, Oriental Mindoro.",
+    "barangay": "Hagan",
+    "address": "Brgy. Hagan, Bongabong, Oriental Mindoro",
+    "latitude": 12.694645,
+    "longitude": 121.3734479,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6953128,
+        121.3719683
+      ],
+      [
+        12.6954778,
+        121.3731242
+      ],
+      [
+        12.6951811,
+        121.3745092
+      ],
+      [
+        12.693635,
+        121.3749608
+      ],
+      [
+        12.6936181,
+        121.3726769
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_73.geojson"
+  },
+  {
+    "id": 74,
+    "name": "Fely Castillo",
+    "operator_name": "Fely Castillo",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6768037,
+    "longitude": 121.487789,
+    "area_hectares": 5.58,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6762306,
+        121.4879411
+      ],
+      [
+        12.6763122,
+        121.4875944
+      ],
+      [
+        12.6753617,
+        121.4864019
+      ],
+      [
+        12.6777681,
+        121.4863267
+      ],
+      [
+        12.6769525,
+        121.4869447
+      ],
+      [
+        12.6788431,
+        121.4887372
+      ],
+      [
+        12.6776119,
+        121.4889233
+      ],
+      [
+        12.67643,
+        121.4888883
+      ],
+      [
+        12.6757231,
+        121.4883433
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_74.geojson"
+  },
+  {
+    "id": 75,
+    "name": "Emelito Pascual",
+    "operator_name": "Emelito Pascual",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6679565,
+    "longitude": 121.4531298,
+    "area_hectares": 5.04,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6672208,
+        121.4546736
+      ],
+      [
+        12.6679139,
+        121.4525075
+      ],
+      [
+        12.6669189,
+        121.4521792
+      ],
+      [
+        12.6671639,
+        121.4514133
+      ],
+      [
+        12.6683,
+        121.4517881
+      ],
+      [
+        12.6684236,
+        121.451795
+      ],
+      [
+        12.6689953,
+        121.4539667
+      ],
+      [
+        12.6686742,
+        121.4549658
+      ],
+      [
+        12.6679983,
+        121.4548789
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_75.geojson"
+  },
+  {
+    "id": 76,
+    "name": "Glenda Cabagay",
+    "operator_name": "Glenda Cabagay",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Hagupit, Bongabong, Oriental Mindoro.",
+    "barangay": "Hagupit",
+    "address": "Brgy. Hagupit, Bongabong, Oriental Mindoro",
+    "latitude": 12.6727133,
+    "longitude": 121.4421206,
+    "area_hectares": 4.94,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6731944,
+        121.4431333
+      ],
+      [
+        12.6715,
+        121.4433444
+      ],
+      [
+        12.6713917,
+        121.4411667
+      ],
+      [
+        12.6738333,
+        121.4412806
+      ],
+      [
+        12.6736472,
+        121.4416778
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_76.geojson"
+  },
+  {
+    "id": 77,
+    "name": "Jhon Andrew Contigno",
+    "operator_name": "Jhon Andrew Contigno",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6765862,
+    "longitude": 121.3932117,
+    "area_hectares": 4.93,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6782506,
+        121.3928344
+      ],
+      [
+        12.6763036,
+        121.3941186
+      ],
+      [
+        12.6757481,
+        121.3948375
+      ],
+      [
+        12.6753619,
+        121.394535
+      ],
+      [
+        12.6766722,
+        121.3912731
+      ],
+      [
+        12.6771806,
+        121.3916717
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_77.geojson"
+  },
+  {
+    "id": 78,
+    "name": "Ma. Roselyn K. Malaluan",
+    "operator_name": "Ma. Roselyn K. Malaluan",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6852766,
+    "longitude": 121.4948441,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6862528,
+        121.4961611
+      ],
+      [
+        12.6852972,
+        121.4961389
+      ],
+      [
+        12.6850333,
+        121.4953028
+      ],
+      [
+        12.6847861,
+        121.4946889
+      ],
+      [
+        12.6844611,
+        121.4944389
+      ],
+      [
+        12.6844722,
+        121.4935917
+      ],
+      [
+        12.6866333,
+        121.4935861
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_78.geojson"
+  },
+  {
+    "id": 79,
+    "name": "Evelyn Tamado",
+    "operator_name": "Evelyn Tamado",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6700936,
+    "longitude": 121.4273138,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6708297,
+        121.4262261
+      ],
+      [
+        12.6708328,
+        121.4289819
+      ],
+      [
+        12.66943,
+        121.4289469
+      ],
+      [
+        12.6692042,
+        121.4261928
+      ],
+      [
+        12.6701711,
+        121.4262214
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_79.geojson"
+  },
+  {
+    "id": 80,
+    "name": "Jose Mare Cari\u00f1o",
+    "operator_name": "Jose Mare Cari\u00f1o",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6685204,
+    "longitude": 121.4272802,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6692042,
+        121.4261928
+      ],
+      [
+        12.66943,
+        121.4289469
+      ],
+      [
+        12.66819,
+        121.4289161
+      ],
+      [
+        12.6674169,
+        121.4261783
+      ],
+      [
+        12.6683611,
+        121.4261667
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_80.geojson"
+  },
+  {
+    "id": 81,
+    "name": "Leopoldo Diokno Jr.",
+    "operator_name": "Leopoldo Diokno Jr.",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Lisap, Bongabong, Oriental Mindoro.",
+    "barangay": "Lisap",
+    "address": "Brgy. Lisap, Bongabong, Oriental Mindoro",
+    "latitude": 12.6996733,
+    "longitude": 121.3507473,
+    "area_hectares": 20.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6982742,
+        121.34875
+      ],
+      [
+        12.7004208,
+        121.3478864
+      ],
+      [
+        12.7023964,
+        121.3492792
+      ],
+      [
+        12.7011964,
+        121.3526806
+      ],
+      [
+        12.698815,
+        121.3534206
+      ],
+      [
+        12.699305,
+        121.3515556
+      ],
+      [
+        12.697305,
+        121.3516589
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_81.geojson"
+  },
+  {
+    "id": 82,
+    "name": "Kim Angelo Fajarito",
+    "operator_name": "Kim Angelo Fajarito",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Isidro, Bongabong, Oriental Mindoro.",
+    "barangay": "San Isidro",
+    "address": "Brgy. San Isidro, Bongabong, Oriental Mindoro",
+    "latitude": 12.6832946,
+    "longitude": 121.4885792,
+    "area_hectares": 1.07,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6833556,
+        121.4878753
+      ],
+      [
+        12.6841342,
+        121.4889956
+      ],
+      [
+        12.6829828,
+        121.4889814
+      ],
+      [
+        12.6827058,
+        121.4884644
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_82.geojson"
+  },
+  {
+    "id": 83,
+    "name": "Danilo Sison",
+    "operator_name": "Danilo Sison",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6691906,
+    "longitude": 121.4314182,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6696203,
+        121.4299764
+      ],
+      [
+        12.6701608,
+        121.4329361
+      ],
+      [
+        12.6685233,
+        121.4328911
+      ],
+      [
+        12.6684581,
+        121.4298692
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_83.geojson"
+  },
+  {
+    "id": 84,
+    "name": "Jose Carlo Salvador",
+    "operator_name": "Jose Carlo Salvador",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6691305,
+    "longitude": 121.4484595,
+    "area_hectares": 2.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6702328,
+        121.4480553
+      ],
+      [
+        12.6697147,
+        121.4490217
+      ],
+      [
+        12.6695628,
+        121.4489717
+      ],
+      [
+        12.6678928,
+        121.4484208
+      ],
+      [
+        12.6682494,
+        121.4478278
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_84.geojson"
+  },
+  {
+    "id": 85,
+    "name": "Robert Rico",
+    "operator_name": "Robert Rico",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Kaligtasan, Bongabong, Oriental Mindoro.",
+    "barangay": "Kaligtasan",
+    "address": "Brgy. Kaligtasan, Bongabong, Oriental Mindoro",
+    "latitude": 12.6641771,
+    "longitude": 121.4682407,
+    "area_hectares": 4.33,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6627475,
+        121.4670811
+      ],
+      [
+        12.663145,
+        121.4670278
+      ],
+      [
+        12.6653158,
+        121.4671747
+      ],
+      [
+        12.6649694,
+        121.4684028
+      ],
+      [
+        12.6644778,
+        121.4686367
+      ],
+      [
+        12.6646561,
+        121.4689853
+      ],
+      [
+        12.664475,
+        121.4700164
+      ],
+      [
+        12.6636303,
+        121.4686008
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_85.geojson"
+  },
+  {
+    "id": 86,
+    "name": "Mark Africa",
+    "operator_name": "Mark Africa",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6701935,
+    "longitude": 121.401946,
+    "area_hectares": 4.19,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6701294,
+        121.4003836
+      ],
+      [
+        12.6714047,
+        121.4019611
+      ],
+      [
+        12.6709303,
+        121.4025864
+      ],
+      [
+        12.6708806,
+        121.4030917
+      ],
+      [
+        12.6691528,
+        121.401975
+      ],
+      [
+        12.6686633,
+        121.4016781
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_86.geojson"
+  },
+  {
+    "id": 87,
+    "name": "Loren Cay Rodilla",
+    "operator_name": "Loren Cay Rodilla",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6661196,
+    "longitude": 121.4088793,
+    "area_hectares": 3.64,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.66593,
+        121.4067578
+      ],
+      [
+        12.6669672,
+        121.4070633
+      ],
+      [
+        12.6664942,
+        121.4094419
+      ],
+      [
+        12.6661472,
+        121.4093339
+      ],
+      [
+        12.6660411,
+        121.4104911
+      ],
+      [
+        12.665585,
+        121.4105183
+      ],
+      [
+        12.6656728,
+        121.4085486
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_87.geojson"
+  },
+  {
+    "id": 88,
+    "name": "Justine James E. Sescar",
+    "operator_name": "Justine James E. Sescar",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6666714,
+    "longitude": 121.4511841,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6654006,
+        121.4521572
+      ],
+      [
+        12.6656911,
+        121.4503269
+      ],
+      [
+        12.6659069,
+        121.4497856
+      ],
+      [
+        12.6687597,
+        121.4508889
+      ],
+      [
+        12.6683,
+        121.4517881
+      ],
+      [
+        12.6664758,
+        121.4511864
+      ],
+      [
+        12.6661658,
+        121.4521553
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_88.geojson"
+  },
+  {
+    "id": 89,
+    "name": "Winalene Joy Sescar",
+    "operator_name": "Winalene Joy Sescar",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6628414,
+    "longitude": 121.4580935,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6624961,
+        121.4596961
+      ],
+      [
+        12.6624858,
+        121.4588567
+      ],
+      [
+        12.6622556,
+        121.4581575
+      ],
+      [
+        12.6626297,
+        121.4560742
+      ],
+      [
+        12.6638908,
+        121.4560844
+      ],
+      [
+        12.6632906,
+        121.4596919
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_89.geojson"
+  },
+  {
+    "id": 90,
+    "name": "Christian Mark Cabael",
+    "operator_name": "Christian Mark Cabael",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6696984,
+    "longitude": 121.4470333,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6702328,
+        121.4480553
+      ],
+      [
+        12.6682494,
+        121.4478281
+      ],
+      [
+        12.6688981,
+        121.4461569
+      ],
+      [
+        12.6714131,
+        121.4460928
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_90.geojson"
+  },
+  {
+    "id": 91,
+    "name": "Reynoso",
+    "operator_name": "Reynoso",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Morente, Bongabong, Oriental Mindoro.",
+    "barangay": "Morente",
+    "address": "Brgy. Morente, Bongabong, Oriental Mindoro",
+    "latitude": 12.6679198,
+    "longitude": 121.4056987,
+    "area_hectares": 4.89,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6681803,
+        121.4042461
+      ],
+      [
+        12.6693275,
+        121.4059581
+      ],
+      [
+        12.6681111,
+        121.4075264
+      ],
+      [
+        12.6667008,
+        121.4059958
+      ],
+      [
+        12.6675753,
+        121.4053214
+      ],
+      [
+        12.6676239,
+        121.4051444
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_91.geojson"
+  },
+  {
+    "id": 92,
+    "name": "Rosemarie Josue",
+    "operator_name": "Rosemarie Josue",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Hagan, Bongabong, Oriental Mindoro.",
+    "barangay": "Hagan",
+    "address": "Brgy. Hagan, Bongabong, Oriental Mindoro",
+    "latitude": 12.6928416,
+    "longitude": 121.3735331,
+    "area_hectares": 4.73,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6926444,
+        121.3713
+      ],
+      [
+        12.6925528,
+        121.3729917
+      ],
+      [
+        12.6936,
+        121.3726694
+      ],
+      [
+        12.6936167,
+        121.3749528
+      ],
+      [
+        12.6930583,
+        121.3751167
+      ],
+      [
+        12.6915772,
+        121.3741678
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_92.geojson"
+  },
+  {
+    "id": 93,
+    "name": "Acela E. Pascual",
+    "operator_name": "Acela E. Pascual",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Luna, Bongabong, Oriental Mindoro.",
+    "barangay": "Luna",
+    "address": "Brgy. Luna, Bongabong, Oriental Mindoro",
+    "latitude": 12.6689371,
+    "longitude": 121.4560778,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6678364,
+        121.4573239
+      ],
+      [
+        12.6682419,
+        121.4563114
+      ],
+      [
+        12.6686742,
+        121.4549658
+      ],
+      [
+        12.6689953,
+        121.4539667
+      ],
+      [
+        12.66944,
+        121.4545186
+      ],
+      [
+        12.6698892,
+        121.4556158
+      ],
+      [
+        12.6696756,
+        121.4562794
+      ],
+      [
+        12.6689658,
+        121.45749
+      ],
+      [
+        12.6687156,
+        121.4582286
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_93.geojson"
+  },
+  {
+    "id": 94,
+    "name": "Lucky Leonard E. Pascual",
+    "operator_name": "Lucky Leonard E. Pascual",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Luna, Bongabong, Oriental Mindoro.",
+    "barangay": "Luna",
+    "address": "Brgy. Luna, Bongabong, Oriental Mindoro",
+    "latitude": 12.6667802,
+    "longitude": 121.4622619,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6652456,
+        121.4614814
+      ],
+      [
+        12.66695,
+        121.4616633
+      ],
+      [
+        12.6669189,
+        121.4620186
+      ],
+      [
+        12.6682278,
+        121.4621064
+      ],
+      [
+        12.6682092,
+        121.4631517
+      ],
+      [
+        12.6651294,
+        121.4631497
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_94.geojson"
+  },
+  {
+    "id": 95,
+    "name": "Antonio S. Pascual",
+    "operator_name": "Antonio S. Pascual",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Luna, Bongabong, Oriental Mindoro.",
+    "barangay": "Luna",
+    "address": "Brgy. Luna, Bongabong, Oriental Mindoro",
+    "latitude": 12.6679255,
+    "longitude": 121.4598117,
+    "area_hectares": 4.03,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6675764,
+        121.4579733
+      ],
+      [
+        12.6678364,
+        121.4573239
+      ],
+      [
+        12.6687156,
+        121.4582286
+      ],
+      [
+        12.6684969,
+        121.4588742
+      ],
+      [
+        12.6684856,
+        121.4603486
+      ],
+      [
+        12.6682278,
+        121.4621064
+      ],
+      [
+        12.6669189,
+        121.4620186
+      ],
+      [
+        12.66695,
+        121.4616633
+      ],
+      [
+        12.6670811,
+        121.46017
+      ],
+      [
+        12.6684406,
+        121.4603481
+      ],
+      [
+        12.6684517,
+        121.4588739
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_95.geojson"
+  },
+  {
+    "id": 96,
+    "name": "Charmea A. Lauyan",
+    "operator_name": "Charmea A. Lauyan",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Hagan, Bongabong, Oriental Mindoro.",
+    "barangay": "Hagan",
+    "address": "Brgy. Hagan, Bongabong, Oriental Mindoro",
+    "latitude": 12.694376,
+    "longitude": 121.3758416,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6930753,
+        121.3751242
+      ],
+      [
+        12.6951811,
+        121.3745092
+      ],
+      [
+        12.6954011,
+        121.3758453
+      ],
+      [
+        12.6957489,
+        121.37754
+      ],
+      [
+        12.6942667,
+        121.3771839
+      ],
+      [
+        12.6937331,
+        121.3754367
+      ],
+      [
+        12.6932258,
+        121.3752522
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_96.geojson"
+  },
+  {
+    "id": 97,
+    "name": "Jonalyn M. Mortera",
+    "operator_name": "Jonalyn M. Mortera",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Mapang, Bongabong, Oriental Mindoro.",
+    "barangay": "Mapang",
+    "address": "Brgy. Mapang, Bongabong, Oriental Mindoro",
+    "latitude": 12.6764119,
+    "longitude": 121.3993838,
+    "area_hectares": 4.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6750661,
+        121.3992578
+      ],
+      [
+        12.676435,
+        121.3980917
+      ],
+      [
+        12.677785,
+        121.3987939
+      ],
+      [
+        12.6765467,
+        121.4004036
+      ],
+      [
+        12.6762267,
+        121.4003719
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_97.geojson"
+  },
+  {
+    "id": 98,
+    "name": "Ronald Liwanag",
+    "operator_name": "Ronald Liwanag",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6694989,
+    "longitude": 121.43999,
+    "area_hectares": 7.65,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6705278,
+        121.4382083
+      ],
+      [
+        12.6706444,
+        121.4413278
+      ],
+      [
+        12.6693028,
+        121.4412639
+      ],
+      [
+        12.6681139,
+        121.440975
+      ],
+      [
+        12.6689056,
+        121.438175
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_98.geojson"
+  },
+  {
+    "id": 99,
+    "name": "Rodrigo F. Domingo III",
+    "operator_name": "Rodrigo F. Domingo III",
+    "description": "Commercial sand and gravel extraction concession in Brgy. Orconuma, Bongabong, Oriental Mindoro.",
+    "barangay": "Orconuma",
+    "address": "Brgy. Orconuma, Bongabong, Oriental Mindoro",
+    "latitude": 12.6667188,
+    "longitude": 121.4742828,
+    "area_hectares": 5.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.665395,
+        121.4724419
+      ],
+      [
+        12.6662947,
+        121.4724733
+      ],
+      [
+        12.6662728,
+        121.4745881
+      ],
+      [
+        12.6682264,
+        121.4746564
+      ],
+      [
+        12.6682094,
+        121.4763072
+      ],
+      [
+        12.6659142,
+        121.4752297
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_99.geojson"
+  },
+  {
+    "id": 100,
+    "name": "Eleazar F. Tupaz",
+    "operator_name": "Eleazar F. Tupaz",
+    "description": "Commercial sand and gravel extraction concession in Brgy. San Jose, Bongabong, Oriental Mindoro.",
+    "barangay": "San Jose",
+    "address": "Brgy. San Jose, Bongabong, Oriental Mindoro",
+    "latitude": 12.6707358,
+    "longitude": 121.4437281,
+    "area_hectares": 4.0,
+    "status": "inactive",
+    "permit_number": null,
+    "permit_expires_at": null,
+    "polygon_coordinates": [
+      [
+        12.6688836,
+        121.4434147
+      ],
+      [
+        12.6714469,
+        121.4433492
+      ],
+      [
+        12.6715014,
+        121.4433464
+      ],
+      [
+        12.6718981,
+        121.4432969
+      ],
+      [
+        12.6718503,
+        121.4444419
+      ],
+      [
+        12.6688344,
+        121.4445192
+      ]
+    ],
+    "gis_file_path": "quarries/quarry_100.geojson"
+  }
+]
