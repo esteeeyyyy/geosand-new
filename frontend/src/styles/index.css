@@ -1270,7 +1270,9 @@ h4 { font-size: 1.125rem; }
   max-height: 100dvh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
 }
 
 .public-header {
@@ -1486,7 +1488,8 @@ h4 { font-size: 1.125rem; }
   display: flex;
   background: linear-gradient(135deg, var(--primary-900) 0%, var(--gray-900) 50%, var(--primary-dark) 100%);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .login-page::before {
@@ -1990,6 +1993,9 @@ h4 { font-size: 1.125rem; }
   justify-content: center;
   z-index: 9999;
   padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   animation: fadeIn 0.2s ease;
 }
 
@@ -1999,6 +2005,10 @@ h4 { font-size: 1.125rem; }
   padding: 32px 28px 24px;
   width: min(100%, 380px);
   max-width: calc(100vw - 32px);
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex-shrink: 0;
   box-sizing: border-box;
   box-shadow: var(--shadow-xl);
   animation: slideUp 0.35s cubic-bezier(0.4, 0, 0.2, 1);

@@ -93,11 +93,18 @@ class UserController extends Controller
         $validated = $request->validate([
             'name' => 'sometimes|string|max:255',
             'email' => ['sometimes', 'email', Rule::unique('users', 'email')->ignore($user->id)],
+            'password' => 'nullable|string|min:6',
             'role' => ['sometimes', Rule::in(['admin', 'checkpoint_officer', 'quarry_operator', 'quarry_staff'])],
             'quarry_id' => 'nullable|exists:quarries,id',
             'phone' => 'nullable|string|max:20',
             'is_active' => 'boolean',
         ]);
+
+        // An empty edit field means "keep the current password". When a new
+        // value is supplied, the User model's hashed cast persists it safely.
+        if (array_key_exists('password', $validated) && empty($validated['password'])) {
+            unset($validated['password']);
+        }
 
         $newRole = $validated['role'] ?? $user->role;
         $newQuarryId = array_key_exists('quarry_id', $validated) ? $validated['quarry_id'] : $user->quarry_id;
