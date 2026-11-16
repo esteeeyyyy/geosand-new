@@ -96,6 +96,18 @@ export default function QuarryDetail() {
             tileSize: 256,
             maxzoom: 15,
           },
+          'gis-province': {
+            type: 'geojson',
+            data: '/oriental-mindoro.geojson',
+          },
+          'gis-municipality': {
+            type: 'geojson',
+            data: '/bongabong.geojson',
+          },
+          'gis-barangays': {
+            type: 'geojson',
+            data: '/bongabong-barangays.geojson',
+          },
           'quarry-data': {
             type: 'geojson',
             data: {
@@ -124,6 +136,53 @@ export default function QuarryDetail() {
           { id: 'base-satellite', type: 'raster', source: 'satellite-tiles', layout: { visibility: 'none' } },
           { id: 'base-topo', type: 'raster', source: 'topo-tiles', layout: { visibility: 'none' } },
           { id: 'hills', type: 'hillshade', source: 'hillshade-dem', layout: { visibility: 'visible' }, paint: { 'hillshade-exaggeration': 0.6 } },
+          {
+            id: 'gis-province-fill',
+            type: 'fill',
+            source: 'gis-province',
+            paint: { 'fill-color': '#94a3b8', 'fill-opacity': 0.08 },
+          },
+          {
+            id: 'gis-province-line',
+            type: 'line',
+            source: 'gis-province',
+            paint: { 'line-color': '#64748b', 'line-width': 1, 'line-opacity': 0.5 },
+          },
+          {
+            id: 'gis-municipality-fill',
+            type: 'fill',
+            source: 'gis-municipality',
+            paint: { 'fill-color': '#F59E0B', 'fill-opacity': 0.1 },
+          },
+          {
+            id: 'gis-municipality-casing',
+            type: 'line',
+            source: 'gis-municipality',
+            paint: { 'line-color': '#FFFFFF', 'line-width': 7, 'line-opacity': 0.95 },
+          },
+          {
+            id: 'gis-municipality-line',
+            type: 'line',
+            source: 'gis-municipality',
+            paint: {
+              'line-color': '#F97316',
+              'line-width': 4,
+              'line-opacity': 1,
+              'line-dasharray': [2, 1],
+            },
+          },
+          {
+            id: 'gis-brgy-fill',
+            type: 'fill',
+            source: 'gis-barangays',
+            paint: { 'fill-color': '#14b8a6', 'fill-opacity': 0.04 },
+          },
+          {
+            id: 'gis-brgy-line',
+            type: 'line',
+            source: 'gis-barangays',
+            paint: { 'line-color': '#0F766E', 'line-width': 0.8, 'line-opacity': 0.5 },
+          },
           {
             id: 'quarry-poly-fill',
             type: 'fill',
@@ -278,19 +337,24 @@ export default function QuarryDetail() {
     });
 
     mapInstanceRef.current = map;
+    setMapObj(map);
+    map.addControl(new maplibregl.NavigationControl({ showCompass: true }), 'bottom-right');
 
-    map.on('load', () => {
-      setMapObj(map);
+    // Populate local GeoJSON sources as soon as the style exists. Waiting for
+    // the full `load` event also waits for remote raster/terrain requests and
+    // can leave production maps without their boundary layers indefinitely.
+    map.once('style.load', () => {
       try {
         map.setTerrain({ source: 'terrain-dem', exaggeration: 1.5 });
       } catch (e) {}
+      map.moveLayer('gis-municipality-casing');
+      map.moveLayer('gis-municipality-line');
       // Detailed GIS layers are declared later in the style; move surveyed
       // boundary corners above them so the markers are never covered.
       map.moveLayer('quarry-poly-line-casing');
       map.moveLayer('quarry-poly-line');
       map.moveLayer('quarry-boundary-points-halo');
       map.moveLayer('quarry-boundary-points');
-      map.addControl(new maplibregl.NavigationControl({ showCompass: true }), 'bottom-right');
 
       const features = [];
       const aiAnalysis = quarry.ai_terrain_analysis;
