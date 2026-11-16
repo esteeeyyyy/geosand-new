@@ -3178,9 +3178,26 @@ h4 { font-size: 1.125rem; }
     overscroll-behavior-y: none;
   }
 
+  .app-layout {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
   .main-content {
+    height: 100%;
+    min-height: 0;
     overflow-x: clip;
-    overflow-y: visible;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .page-content,
+  .recharts-wrapper,
+  .recharts-surface {
+    touch-action: pan-y !important;
   }
 
   .main-header {
