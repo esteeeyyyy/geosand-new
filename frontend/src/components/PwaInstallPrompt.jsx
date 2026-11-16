@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Download, X, Share, MoreVertical, CheckCircle2 } from 'lucide-react';
+import { Download, X, Share, CheckCircle2 } from 'lucide-react';
 import { usePwaInstall } from '../hooks/usePwaInstall';
 
-const MOBILE_INSTALL_DISMISSED_KEY = 'geosand:pwa-install-dismissed';
+const MOBILE_INSTALL_DISMISSED_KEY = 'geosand:pwa-native-install-dismissed-v2';
 
 const isMobileDevice = () => {
   if (typeof window === 'undefined') return false;
@@ -13,20 +13,23 @@ const isMobileDevice = () => {
 /**
  * App-level mobile install prompt. Browsers do not allow the native PWA
  * dialog to open without a user gesture, so this modal provides the gesture
- * through its Install button. iOS and browsers without beforeinstallprompt
- * receive manual Add to Home Screen instructions instead.
+ * through its Install button. On Android, the modal waits until that native
+ * prompt is ready instead of showing a manual browser-menu guide. iOS still
+ * receives Add to Home Screen instructions because it has no native event.
  */
 export function MobilePwaInstallPrompt() {
   const { isInstallable, isInstalled, isIos, promptInstall } = usePwaInstall();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (!isMobileDevice() || isInstalled) return undefined;
+    if (!isMobileDevice() || isInstalled || (!isIos && !isInstallable)) {
+      return undefined;
+    }
     if (window.sessionStorage.getItem(MOBILE_INSTALL_DISMISSED_KEY) === 'true') return undefined;
 
-    const timer = window.setTimeout(() => setVisible(true), 900);
+    const timer = window.setTimeout(() => setVisible(true), 100);
     return () => window.clearTimeout(timer);
-  }, [isInstalled]);
+  }, [isInstalled, isInstallable, isIos]);
 
   const dismiss = () => {
     window.sessionStorage.setItem(MOBILE_INSTALL_DISMISSED_KEY, 'true');
@@ -42,7 +45,7 @@ export function MobilePwaInstallPrompt() {
 
   if (!visible || isInstalled) return null;
 
-  const showManualSteps = isIos || !isInstallable;
+  const showManualSteps = isIos;
 
   return (
     <div className="pwa-ios-overlay" role="presentation" onClick={dismiss}>
@@ -67,12 +70,12 @@ export function MobilePwaInstallPrompt() {
             <div className="pwa-ios-step">
               <span className="pwa-ios-step-num">1</span>
               <span>
-                Tap the {isIos ? <><strong>Share</strong> <Share size={16} className="pwa-inline-icon" /></> : <><strong>browser menu</strong> <MoreVertical size={16} className="pwa-inline-icon" /></>}
+                Tap the <strong>Share</strong> <Share size={16} className="pwa-inline-icon" /> button
               </span>
             </div>
             <div className="pwa-ios-step">
               <span className="pwa-ios-step-num">2</span>
-              <span>Tap <strong>{isIos ? 'Add to Home Screen' : 'Install app or Add to Home screen'}</strong></span>
+              <span>Tap <strong>Add to Home Screen</strong></span>
             </div>
             <div className="pwa-ios-step">
               <span className="pwa-ios-step-num">3</span>
