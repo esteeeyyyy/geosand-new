@@ -4,8 +4,7 @@ import { createQuarry, getQuarries, getQuarryGisFile } from '../../api/quarries'
 import { approveOperatorApplication, getOperatorApplications } from '../../api/operatorApplications';
 import { getCheckpoints } from '../../api/checkpoints';
 import { createMapBoundaryOverlay } from '../../utils/mapBoundaryOverlay';
-import { Mountain, MapPin, Search, Download, X, Share, ChevronLeft, ChevronRight, Building2, Plus, Trash2, FileText, ArrowRight, Save } from 'lucide-react';
-import { usePwaInstall } from '../../hooks/usePwaInstall';
+import { Mountain, MapPin, Search, X, ChevronLeft, ChevronRight, Building2, Plus, Trash2, FileText, ArrowRight, Save } from 'lucide-react';
 import { MapLayerControl } from '../../components/MapLayerToggle';
 import { GeolocationControl, FullscreenControl, ScaleBar, CoordinateDisplay, MapControlsToolbar, calcPolygonArea } from '../../components/MapControls';
 import { useAuth } from '../../context/AuthContext';
@@ -36,7 +35,6 @@ export default function Landing() {
   const { openOperatorModal } = useOutletContext() || {};
   const [is3D, setIs3D] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
-  const [installDismissed, setInstallDismissed] = useState(false);
   const [activeGisInfo, setActiveGisInfo] = useState(null);
   const [applicationPickerOpen, setApplicationPickerOpen] = useState(false);
   const [pendingApplications, setPendingApplications] = useState([]);
@@ -45,7 +43,6 @@ export default function Landing() {
   const [quarryDraftMode, setQuarryDraftMode] = useState(false);
   const [draftPoints, setDraftPoints] = useState([{ id: 1, latitude: '', longitude: '' }]);
   const [savingQuarry, setSavingQuarry] = useState(false);
-  const { isInstallable, isInstalled, isIos, promptInstall, showIosPrompt, dismissIosPrompt } = usePwaInstall();
 
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);

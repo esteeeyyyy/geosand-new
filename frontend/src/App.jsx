@@ -3,12 +3,14 @@ import { ConfirmProvider } from './context/ConfirmContext';
 import AppRouter from './router';
 import { Toaster } from 'react-hot-toast';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { MobilePwaInstallPrompt } from './components/PwaInstallPrompt';
 
 export default function App() {
   const application = (
     <AuthProvider>
       <ConfirmProvider>
         <AppRouter />
+        <MobilePwaInstallPrompt />
         <Toaster
           position="top-right"
           toastOptions={{

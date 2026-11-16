@@ -1997,8 +1997,9 @@ h4 { font-size: 1.125rem; }
   background: var(--surface);
   border-radius: var(--radius-xl);
   padding: 32px 28px 24px;
-  width: 100%;
-  max-width: 380px;
+  width: min(100%, 380px);
+  max-width: calc(100vw - 32px);
+  box-sizing: border-box;
   box-shadow: var(--shadow-xl);
   animation: slideUp 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -2080,6 +2081,54 @@ h4 { font-size: 1.125rem; }
   justify-content: center;
   font-weight: 700;
   font-size: 0.8125rem;
+}
+
+.pwa-inline-icon {
+  display: inline;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.pwa-install-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 14px;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  text-align: left;
+}
+
+.pwa-install-benefits span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.pwa-install-benefits svg {
+  flex-shrink: 0;
+  color: var(--primary);
+}
+
+.pwa-mobile-install-actions {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.pwa-mobile-install-actions .btn {
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .pwa-mobile-install-modal {
+    padding: 28px 20px 20px;
+  }
 }
 
 /* Mobile - hide install text on very small screens in public nav */
