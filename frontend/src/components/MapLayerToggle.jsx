@@ -172,7 +172,10 @@ export function MapLayerControl({ map, mapRef, is3D, setIs3D }) {
       setGroupVisibility(['gis-province-fill', 'gis-province-line'], gisLayers.province);
 
       // Municipality
-      setGroupVisibility(['gis-municipality-fill', 'gis-municipality-line'], gisLayers.municipality);
+      setGroupVisibility(
+        ['gis-municipality-fill', 'gis-municipality-casing', 'gis-municipality-line'],
+        gisLayers.municipality,
+      );
 
       // Barangays
       setGroupVisibility(['gis-brgy-fill', 'gis-brgy-line'], gisLayers.barangays);
@@ -425,7 +428,7 @@ export function MapLayerControl({ map, mapRef, is3D, setIs3D }) {
           </p>
           {[
             { key: 'province',     label: 'Oriental Mindoro',  color: '#94a3b8', desc: 'Province context' },
-            { key: 'municipality', label: 'Bongabong',          color: '#0F766E', desc: 'Municipal boundary' },
+            { key: 'municipality', label: 'Bongabong',          color: '#F97316', desc: 'Municipal boundary' },
             { key: 'barangays',   label: 'Barangays',          color: '#14b8a6', desc: '36 sub-areas' },
           ].map(({ key, label, color, desc }) => (
             <div

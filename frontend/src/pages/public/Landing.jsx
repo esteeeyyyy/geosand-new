@@ -280,8 +280,18 @@ export default function Landing() {
             type: 'fill',
             source: 'gis-municipality',
             paint: {
-              'fill-color': '#0F766E',
-              'fill-opacity': 0.06,
+              'fill-color': '#F59E0B',
+              'fill-opacity': 0.1,
+            },
+          },
+          {
+            id: 'gis-municipality-casing',
+            type: 'line',
+            source: 'gis-municipality',
+            paint: {
+              'line-color': '#FFFFFF',
+              'line-width': 7,
+              'line-opacity': 0.95,
             },
           },
           {
@@ -289,9 +299,10 @@ export default function Landing() {
             type: 'line',
             source: 'gis-municipality',
             paint: {
-              'line-color': '#0F766E',
-              'line-width': 2.5,
-              'line-dasharray': [3, 2],
+              'line-color': '#F97316',
+              'line-width': 4,
+              'line-opacity': 1,
+              'line-dasharray': [2, 1],
             },
           },
           {
@@ -563,6 +574,12 @@ export default function Landing() {
     // Layer interactions only need the style definition to be ready; waiting for
     // every tile/source to load can hang indefinitely on a mobile connection.
     map.once('style.load', () => {
+      // Keep the municipal outline above fills, terrain, and barangay lines.
+      // Its white casing makes the boundary readable on both street and
+      // satellite basemaps.
+      map.moveLayer('gis-municipality-casing');
+      map.moveLayer('gis-municipality-line');
+
       // Keep quarry boundary vertices above detailed GIS fills and terrain
       // overlays so the surveyed corners remain visible on small screens.
       map.moveLayer('quarries-polygons-outline');
