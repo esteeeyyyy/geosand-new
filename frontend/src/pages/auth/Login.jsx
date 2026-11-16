@@ -5,6 +5,7 @@ import { ArrowLeft, Lock, LogIn, Mail, MapPin } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { googleLogin as apiGoogleLogin, login as apiLogin } from '../../api/auth';
 import { useAuth } from '../../context/AuthContext';
+import PasswordInput from '../../components/PasswordInput';
 
 const dashboardForRole = {
   admin: '/admin/dashboard',
@@ -106,20 +107,16 @@ export default function Login() {
             </div>
             <div className="form-group">
               <label className="form-label" htmlFor="login-password">Password</label>
-              <div style={{ position: 'relative' }}>
-                <Lock size={18} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-tertiary)' }} />
-                <input
-                  id="login-password"
-                  className="form-input"
-                  type="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                  placeholder="Enter your password"
-                  autoComplete="current-password"
-                  style={{ paddingLeft: 40 }}
-                  required
-                />
-              </div>
+              <PasswordInput
+                id="login-password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                placeholder="Enter your password"
+                autoComplete="current-password"
+                style={{ paddingLeft: 40 }}
+                leadingIcon={<Lock size={18} className="password-leading-icon" aria-hidden="true" />}
+                required
+              />
             </div>
             <button type="submit" className="btn btn-primary btn-lg w-full" disabled={loading || googleLoading}>
               <LogIn size={18} /> {loading ? 'Signing in...' : 'Sign In'}

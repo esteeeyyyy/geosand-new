@@ -4,6 +4,7 @@ import { Plus, Search, Edit2, Trash2, X, UserPlus, Mail, Phone } from 'lucide-re
 import { useConfirm } from '../../context/ConfirmContext';
 import toast from 'react-hot-toast';
 import Pagination from '../../components/Pagination';
+import PasswordInput from '../../components/PasswordInput';
 
 export default function OperatorStaff() {
   const confirm = useConfirm();
@@ -219,9 +220,7 @@ export default function OperatorStaff() {
                   <label className="form-label">
                     {modal === 'edit' ? 'Password (leave blank to keep)' : 'Password'}
                   </label>
-                  <input
-                    className="form-input"
-                    type="password"
+                  <PasswordInput
                     value={form.password}
                     onChange={(e) => setForm({ ...form, password: e.target.value })}
                     placeholder={modal === 'edit' ? 'Leave blank to keep current' : 'Default: password'}

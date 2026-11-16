@@ -275,6 +275,51 @@ h4 { font-size: 1.125rem; }
   color: var(--text-tertiary);
 }
 
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-leading-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  z-index: 1;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.password-visibility-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.password-visibility-toggle:hover {
+  color: var(--primary);
+  background: var(--primary-50);
+}
+
+.password-visibility-toggle:focus-visible {
+  color: var(--primary);
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
 .form-textarea {
   resize: vertical;
   min-height: 100px;

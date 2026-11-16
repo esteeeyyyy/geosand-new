@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import Pagination from '../../components/Pagination';
 import AdminPageActions from '../../components/AdminPageActions';
 import SearchableSelect from '../../components/SearchableSelect';
+import PasswordInput from '../../components/PasswordInput';
 
 export default function AdminUsers() {
   const confirm = useConfirm();
@@ -185,7 +186,7 @@ export default function AdminUsers() {
                 </div>
                 <div className="form-group">
                   <label className="form-label">{modal === 'edit' ? 'Password (leave blank to keep)' : 'Password'}</label>
-                  <input className="form-input" type="password" value={form.password} onChange={(e) => setForm({...form, password: e.target.value})}
+                  <PasswordInput value={form.password} onChange={(e) => setForm({...form, password: e.target.value})}
                     placeholder={modal === 'edit' ? 'Leave blank to keep current' : 'Default: password'} />
                 </div>
                 <div className="form-group">
