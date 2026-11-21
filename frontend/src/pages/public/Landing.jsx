@@ -43,6 +43,16 @@ export default function Landing() {
   const [quarryDraftMode, setQuarryDraftMode] = useState(false);
   const [draftPoints, setDraftPoints] = useState([{ id: 1, latitude: '', longitude: '' }]);
   const [savingQuarry, setSavingQuarry] = useState(false);
+  const [quarryDetails, setQuarryDetails] = useState({
+    name: '',
+    address: '',
+    permit_number: '',
+  });
+
+  const quarryDraftModeRef = useRef(false);
+  useEffect(() => {
+    quarryDraftModeRef.current = quarryDraftMode;
+  }, [quarryDraftMode]);
 
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -585,8 +595,24 @@ export default function Landing() {
       map.moveLayer('quarries-boundary-points-halo');
       map.moveLayer('quarries-boundary-points');
 
+      // Map click handler for adding/filling boundary points in draft mode
+      map.on('click', (e) => {
+        if (!quarryDraftModeRef.current) return;
+        const lat = parseFloat(e.lngLat.lat.toFixed(6));
+        const lng = parseFloat(e.lngLat.lng.toFixed(6));
+        setDraftPoints((points) => {
+          const last = points[points.length - 1];
+          if (last && (last.latitude === '' || last.latitude === undefined) && (last.longitude === '' || last.longitude === undefined)) {
+            return points.map((p, idx) => idx === points.length - 1 ? { ...p, latitude: String(lat), longitude: String(lng) } : p);
+          }
+          const id = nextDraftPointId.current++;
+          return [...points, { id, latitude: String(lat), longitude: String(lng) }];
+        });
+      });
+
       // Click on outer quarry polygon boundary to zoom in & load its GIS file
       map.on('click', 'quarries-polygons-fill', (e) => {
+        if (quarryDraftModeRef.current) return;
         if (!e.features || !e.features.length) return;
         const qId = e.features[0].properties?.id;
         const targetQ = quarriesRef.current.find((x) => x.id === qId);
@@ -602,6 +628,7 @@ export default function Landing() {
       });
 
       const handleBoundaryPointClick = (event) => {
+        if (quarryDraftModeRef.current) return;
         const properties = event.features?.[0]?.properties;
         if (!properties) return;
 
@@ -628,6 +655,7 @@ export default function Landing() {
 
       // Click on any detailed GIS feature (pit, stockpile, plant, road, sensor)
       const handleGisClick = (e) => {
+        if (quarryDraftModeRef.current) return;
         if (!e.features || !e.features.length) return;
         const feat = e.features[0];
         const props = feat.properties || {};
@@ -675,6 +703,7 @@ export default function Landing() {
       });
 
       map.on('click', 'checkpoint-markers', (event) => {
+        if (quarryDraftModeRef.current) return;
         const properties = event.features?.[0]?.properties;
         if (!properties) return;
 
@@ -1244,9 +1273,28 @@ export default function Landing() {
 
   const beginCoordinateEntry = () => {
     if (!selectedApplication) {
-      toast.error('Select a pending operator application first');
+      toast.error('Select a pending operator application first, or click Skip');
       return;
     }
+    setQuarryDetails({
+      name: selectedApplication.applicant_name || selectedApplication.company_name || '',
+      address: selectedApplication.quarry_location || '',
+      permit_number: selectedApplication.permit_number || '',
+    });
+    setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
+    nextDraftPointId.current = 2;
+    setApplicationPickerOpen(false);
+    setQuarryDraftMode(true);
+    setSidebarCollapsed(false);
+  };
+
+  const skipApplicationSelection = () => {
+    setSelectedApplicationId('');
+    setQuarryDetails({
+      name: '',
+      address: '',
+      permit_number: '',
+    });
     setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
     nextDraftPointId.current = 2;
     setApplicationPickerOpen(false);
@@ -1270,15 +1318,20 @@ export default function Landing() {
   const cancelQuarryFlow = () => {
     setApplicationPickerOpen(false);
     setQuarryDraftMode(false);
-    navigate('/admin/operator-applications');
+    setSelectedApplicationId('');
+    setQuarryDetails({ name: '', address: '', permit_number: '' });
+    navigate('/', { replace: true });
   };
 
   const saveApplicationQuarry = async (event) => {
     event.preventDefault();
-    if (!selectedApplication) {
-      toast.error('The selected operator application is unavailable');
+
+    const name = (quarryDetails.name || selectedApplication?.applicant_name || selectedApplication?.company_name || '').trim();
+    if (!name) {
+      toast.error('Please enter a quarry / permittee name');
       return;
     }
+
     if (validDraftPoints.length !== draftPoints.length) {
       toast.error('Enter a valid latitude and longitude for every point');
       return;
@@ -1290,36 +1343,47 @@ export default function Landing() {
 
     const latitude = validDraftPoints.reduce((sum, point) => sum + point[0], 0) / validDraftPoints.length;
     const longitude = validDraftPoints.reduce((sum, point) => sum + point[1], 0) / validDraftPoints.length;
-    const applicationNote = `Created from operator application by ${selectedApplication.applicant_name}.`;
+    const applicationNote = selectedApplication
+      ? `Created from operator application by ${selectedApplication.applicant_name}.`
+      : 'Created directly by admin.';
+
+    const description = selectedApplication?.remarks
+      ? `${applicationNote} ${selectedApplication.remarks}`
+      : applicationNote;
+
+    const address = (quarryDetails.address || selectedApplication?.quarry_location || 'Bongabong, Oriental Mindoro').trim();
+    const permitNumber = (quarryDetails.permit_number || selectedApplication?.permit_number || '').trim() || null;
 
     setSavingQuarry(true);
     try {
       const response = await createQuarry({
-        name: selectedApplication.applicant_name,
-        description: selectedApplication.remarks ? `${applicationNote} ${selectedApplication.remarks}` : applicationNote,
+        name,
+        description,
         latitude,
         longitude,
         polygon_coordinates: validDraftPoints,
-        address: selectedApplication.quarry_location,
-        status: 'pending',
+        address,
+        status: selectedApplication ? 'pending' : 'active',
         area_hectares: calcPolygonArea(validDraftPoints),
-        permit_number: selectedApplication.permit_number || null,
+        permit_number: permitNumber,
       });
 
       const createdQuarry = response.data.quarry;
-      try {
-        await approveOperatorApplication(selectedApplication.id, {
-          admin_remarks: `Application approved when quarry ${createdQuarry.name} was mapped and created.`,
-        });
-      } catch {
-        toast.error('The quarry was saved, but the application could not be marked approved');
+      if (selectedApplication?.id) {
+        try {
+          await approveOperatorApplication(selectedApplication.id, {
+            admin_remarks: `Application approved when quarry ${createdQuarry.name} was mapped and created.`,
+          });
+        } catch {
+          toast.error('The quarry was saved, but the application could not be marked approved');
+        }
       }
 
       setQuarries((current) => [...current, createdQuarry]);
       setSelected(createdQuarry);
       setQuarryDraftMode(false);
       navigate('/', { replace: true });
-      toast.success('Quarry boundary saved from the operator application');
+      toast.success(selectedApplication ? 'Quarry boundary saved from the operator application' : 'Quarry created successfully');
     } catch (error) {
       toast.error(error.response?.data?.message || 'The quarry could not be saved');
     } finally {
@@ -1396,11 +1460,26 @@ export default function Landing() {
               )}
             </div>
 
-            <div className="modal-footer" style={{ padding: '14px 20px', borderTop: '1px solid var(--border)' }}>
+            <div className="modal-footer" style={{ padding: '14px 20px', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <button type="button" className="btn btn-secondary" onClick={cancelQuarryFlow}>Cancel</button>
-              <button type="button" className="btn btn-primary" onClick={beginCoordinateEntry} disabled={!selectedApplication || applicationsLoading}>
-                Next <ArrowRight size={17} />
-              </button>
+              <div style={{ display: 'flex', gap: 10 }}>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={skipApplicationSelection}
+                  title="Skip selecting an operator application and head directly to quarry details"
+                >
+                  Skip
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={beginCoordinateEntry}
+                  disabled={!selectedApplication || applicationsLoading}
+                >
+                  Next <ArrowRight size={17} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1463,18 +1542,73 @@ export default function Landing() {
                 <MapPin size={18} />
               </div>
               <div style={{ minWidth: 0 }}>
-                <h2 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: '#1e293b' }}>Map Quarry Boundary</h2>
+                <h2 style={{ margin: 0, fontSize: '1rem', fontWeight: 700, color: '#1e293b' }}>
+                  {selectedApplication ? 'Map Quarry Boundary' : 'Add New Quarry'}
+                </h2>
                 <p style={{ margin: '2px 0 0', fontSize: '0.72rem', color: '#64748b', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {selectedApplication?.company_name}
+                  {selectedApplication ? selectedApplication.company_name : 'Quarry details & boundary'}
                 </p>
               </div>
             </div>
             <p style={{ margin: '12px 0 0', fontSize: '0.77rem', lineHeight: 1.5, color: '#64748b' }}>
-              Enter at least three latitude and longitude points. Valid points appear on the map immediately.
+              {selectedApplication
+                ? 'Enter at least three latitude and longitude points. Valid points appear on the map immediately.'
+                : 'Enter quarry details and boundary coordinates. You can also click the map to add points.'}
             </p>
           </div>
 
           <div style={{ flex: 1, overflowY: 'auto', padding: '14px 18px' }}>
+            {/* Quarry Details Fields */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 14, paddingBottom: 14, borderBottom: '1px solid var(--border)' }}>
+              <div>
+                <label className="form-label" style={{ fontSize: '0.75rem', fontWeight: 600, display: 'block', marginBottom: 4 }}>
+                  Quarry / Permittee Name <span style={{ color: '#EF4444' }}>*</span>
+                </label>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="e.g. San Pedro Quarry"
+                  value={quarryDetails.name}
+                  onChange={(e) => setQuarryDetails({ ...quarryDetails, name: e.target.value })}
+                  style={{ height: 34, fontSize: '0.82rem' }}
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="form-label" style={{ fontSize: '0.75rem', fontWeight: 600, display: 'block', marginBottom: 4 }}>
+                  Location / Barangay
+                </label>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="e.g. Brgy. San Pedro, Bongabong"
+                  value={quarryDetails.address}
+                  onChange={(e) => setQuarryDetails({ ...quarryDetails, address: e.target.value })}
+                  style={{ height: 34, fontSize: '0.82rem' }}
+                />
+              </div>
+
+              <div>
+                <label className="form-label" style={{ fontSize: '0.75rem', fontWeight: 600, display: 'block', marginBottom: 4 }}>
+                  Permit Number <span style={{ fontWeight: 400, color: 'var(--text-tertiary)', fontSize: '0.7rem' }}>(Optional)</span>
+                </label>
+                <input
+                  className="form-input"
+                  type="text"
+                  placeholder="e.g. QP-2026-001"
+                  value={quarryDetails.permit_number}
+                  onChange={(e) => setQuarryDetails({ ...quarryDetails, permit_number: e.target.value })}
+                  style={{ height: 34, fontSize: '0.82rem' }}
+                />
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+              <strong style={{ fontSize: '0.78rem', color: '#1e293b' }}>Boundary Coordinates</strong>
+              <span style={{ fontSize: '0.68rem', color: '#64748b' }}>Click map or enter below</span>
+            </div>
+
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {draftPoints.map((point, index) => (
                 <div key={point.id} style={{ padding: 12, border: '1px solid var(--border)', borderRadius: 10, background: '#fff' }}>
