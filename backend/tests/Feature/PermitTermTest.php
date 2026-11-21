@@ -23,6 +23,36 @@ class PermitTermTest extends TestCase
         $this->assertSame('2027-11-23', $permit->expires_at->toDateString());
     }
 
+    public function test_quarry_creation_accepts_expiry_date_and_annual_allowable_consumption(): void
+    {
+        $admin = User::factory()->create(['role' => 'admin', 'is_active' => true]);
+
+        Sanctum::actingAs($admin);
+        $response = $this->postJson('/api/v1/admin/quarries', [
+            'name' => 'Expiry Date Quarry',
+            'latitude' => 12.7567,
+            'longitude' => 121.3189,
+            'status' => 'active',
+            'permit_number' => 'QP-2026-EXPIRY',
+            'permit_expires_at' => '2027-11-23',
+            'annual_allowable_volume_cubic_meters' => 25000,
+        ]);
+
+        $response
+            ->assertCreated()
+            ->assertJsonPath('quarry.permit_number', 'QP-2026-EXPIRY')
+            ->assertJsonPath('quarry.permit_issued_at', '2026-11-23')
+            ->assertJsonPath('quarry.permit_expires_at', '2027-11-23')
+            ->assertJsonPath('quarry.annual_allowable_volume_cubic_meters', 25000);
+
+        $this->assertDatabaseHas('quarry_permits', [
+            'permit_number' => 'QP-2026-EXPIRY',
+            'issued_at' => '2026-11-23',
+            'expires_at' => '2027-11-23',
+            'annual_allowable_volume_cubic_meters' => 25000,
+        ]);
+    }
+
     public function test_annual_consumption_only_includes_verified_volume_inside_permit_term(): void
     {
         $operator = User::factory()->create();

@@ -47,6 +47,8 @@ export default function Landing() {
     name: '',
     address: '',
     permit_number: '',
+    permit_expires_at: '',
+    annual_allowable_volume_cubic_meters: '',
   });
 
   const quarryDraftModeRef = useRef(false);
@@ -1280,6 +1282,8 @@ export default function Landing() {
       name: selectedApplication.applicant_name || selectedApplication.company_name || '',
       address: selectedApplication.quarry_location || '',
       permit_number: selectedApplication.permit_number || '',
+      permit_expires_at: '',
+      annual_allowable_volume_cubic_meters: '',
     });
     setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
     nextDraftPointId.current = 2;
@@ -1294,6 +1298,8 @@ export default function Landing() {
       name: '',
       address: '',
       permit_number: '',
+      permit_expires_at: '',
+      annual_allowable_volume_cubic_meters: '',
     });
     setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
     nextDraftPointId.current = 2;
@@ -1319,7 +1325,13 @@ export default function Landing() {
     setApplicationPickerOpen(false);
     setQuarryDraftMode(false);
     setSelectedApplicationId('');
-    setQuarryDetails({ name: '', address: '', permit_number: '' });
+    setQuarryDetails({
+      name: '',
+      address: '',
+      permit_number: '',
+      permit_expires_at: '',
+      annual_allowable_volume_cubic_meters: '',
+    });
     navigate('/', { replace: true });
   };
 
@@ -1353,6 +1365,19 @@ export default function Landing() {
 
     const address = (quarryDetails.address || selectedApplication?.quarry_location || 'Bongabong, Oriental Mindoro').trim();
     const permitNumber = (quarryDetails.permit_number || selectedApplication?.permit_number || '').trim() || null;
+    const permitExpiresAt = quarryDetails.permit_expires_at || null;
+    const annualAllowableVolume = quarryDetails.annual_allowable_volume_cubic_meters !== ''
+      ? Number(quarryDetails.annual_allowable_volume_cubic_meters)
+      : null;
+
+    if (permitNumber && !permitExpiresAt) {
+      toast.error('Enter the permit expiry date');
+      return;
+    }
+    if (!permitNumber && (permitExpiresAt || annualAllowableVolume !== null)) {
+      toast.error('Enter the permit number for the permit details');
+      return;
+    }
 
     setSavingQuarry(true);
     try {
@@ -1366,6 +1391,8 @@ export default function Landing() {
         status: selectedApplication ? 'pending' : 'active',
         area_hectares: calcPolygonArea(validDraftPoints),
         permit_number: permitNumber,
+        permit_expires_at: permitExpiresAt,
+        annual_allowable_volume_cubic_meters: annualAllowableVolume,
       });
 
       const createdQuarry = response.data.quarry;
@@ -1599,6 +1626,36 @@ export default function Landing() {
                   placeholder="e.g. QP-2026-001"
                   value={quarryDetails.permit_number}
                   onChange={(e) => setQuarryDetails({ ...quarryDetails, permit_number: e.target.value })}
+                  style={{ height: 34, fontSize: '0.82rem' }}
+                />
+              </div>
+
+              <div>
+                <label className="form-label" style={{ fontSize: '0.75rem', fontWeight: 600, display: 'block', marginBottom: 4 }}>
+                  Permit Expiry Date <span style={{ fontWeight: 400, color: 'var(--text-tertiary)', fontSize: '0.7rem' }}>(Required with permit)</span>
+                </label>
+                <input
+                  className="form-input"
+                  type="date"
+                  value={quarryDetails.permit_expires_at}
+                  onChange={(e) => setQuarryDetails({ ...quarryDetails, permit_expires_at: e.target.value })}
+                  style={{ height: 34, fontSize: '0.82rem' }}
+                  required={Boolean(quarryDetails.permit_number)}
+                />
+              </div>
+
+              <div>
+                <label className="form-label" style={{ fontSize: '0.75rem', fontWeight: 600, display: 'block', marginBottom: 4 }}>
+                  Annual Allowable Consumption (m³/year) <span style={{ fontWeight: 400, color: 'var(--text-tertiary)', fontSize: '0.7rem' }}>(Optional)</span>
+                </label>
+                <input
+                  className="form-input"
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  placeholder="e.g. 25000"
+                  value={quarryDetails.annual_allowable_volume_cubic_meters}
+                  onChange={(e) => setQuarryDetails({ ...quarryDetails, annual_allowable_volume_cubic_meters: e.target.value })}
                   style={{ height: 34, fontSize: '0.82rem' }}
                 />
               </div>

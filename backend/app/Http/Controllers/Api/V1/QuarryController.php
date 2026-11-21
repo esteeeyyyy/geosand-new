@@ -141,6 +141,7 @@ class QuarryController extends Controller
             'annual_allowable_volume_cubic_meters' => 'nullable|numeric|min:0',
             'permit_number' => 'nullable|string|max:100',
             'permit_issued_at' => 'nullable|date',
+            'permit_expires_at' => 'nullable|date',
         ]);
 
         // Auto-center marker on polygon centroid
@@ -154,17 +155,21 @@ class QuarryController extends Controller
             $quarryData = Arr::except($validated, [
                 'permit_number',
                 'permit_issued_at',
+                'permit_expires_at',
                 'annual_allowable_volume_cubic_meters',
             ]);
             $quarryData['created_by'] = $request->user()->id;
             $quarry = Quarry::create($quarryData);
 
-            if (!empty($validated['permit_number']) && !empty($validated['permit_issued_at'])) {
+            if (!empty($validated['permit_number']) && (!empty($validated['permit_issued_at']) || !empty($validated['permit_expires_at']))) {
+                $issuedAt = $validated['permit_issued_at']
+                    ?? \Carbon\Carbon::parse($validated['permit_expires_at'])->subYearNoOverflow()->toDateString();
+
                 QuarryPermit::create([
                     'quarry_id' => $quarry->id,
                     'permit_number' => $validated['permit_number'],
-                    'issued_at' => $validated['permit_issued_at'],
-                    'expires_at' => QuarryPermit::expirationDate($validated['permit_issued_at'])->toDateString(),
+                    'issued_at' => $issuedAt,
+                    'expires_at' => QuarryPermit::expirationDate($issuedAt)->toDateString(),
                     'annual_allowable_volume_cubic_meters' => $validated['annual_allowable_volume_cubic_meters'] ?? null,
                     'status' => 'active',
                     'created_by' => $request->user()->id,
