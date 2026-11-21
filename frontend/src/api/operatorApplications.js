@@ -3,7 +3,9 @@ import api from './axios';
 export const submitOperatorApplication = (data) => {
   const fd = new FormData();
   fd.append('applicant_name', data.applicant_name);
-  fd.append('company_name', data.company_name);
+  // Keep the existing backend/admin record compatible after removing the
+  // separate quarry business name field from the public application form.
+  fd.append('company_name', data.applicant_name);
   fd.append('email', data.email);
   fd.append('phone', data.phone);
   fd.append('quarry_location', data.quarry_location);

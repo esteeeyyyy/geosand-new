@@ -8,7 +8,6 @@ export default function BeAnOperatorPage() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     applicant_name: '',
-    company_name: '',
     email: '',
     phone: '',
     quarry_location: '',
@@ -52,7 +51,6 @@ export default function BeAnOperatorPage() {
     setSuccess(false);
     setForm({
       applicant_name: '',
-      company_name: '',
       email: '',
       phone: '',
       quarry_location: '',
@@ -126,30 +124,16 @@ export default function BeAnOperatorPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-              <div className="grid-2">
-                <div className="form-group">
-                  <label className="form-label">Applicant Name <span style={{ color: 'var(--danger)' }}>*</span></label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    placeholder="Full name of owner/representative"
-                    value={form.applicant_name}
-                    onChange={(e) => setForm({ ...form, applicant_name: e.target.value })}
-                    required
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label className="form-label">Quarry Business Name <span style={{ color: 'var(--danger)' }}>*</span></label>
-                  <input
-                    type="text"
-                    className="form-input"
-                    placeholder="e.g. Mindoro Sand & Gravel Corp."
-                    value={form.company_name}
-                    onChange={(e) => setForm({ ...form, company_name: e.target.value })}
-                    required
-                  />
-                </div>
+              <div className="form-group">
+                <label className="form-label">Permittee / Applicant Name <span style={{ color: 'var(--danger)' }}>*</span></label>
+                <input
+                  type="text"
+                  className="form-input"
+                  placeholder="Full name of permittee, owner, or representative"
+                  value={form.applicant_name}
+                  onChange={(e) => setForm({ ...form, applicant_name: e.target.value })}
+                  required
+                />
               </div>
 
               <div className="grid-2">
