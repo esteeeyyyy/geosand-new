@@ -43,6 +43,7 @@ export default function Landing() {
   const [quarryDraftMode, setQuarryDraftMode] = useState(false);
   const [draftPoints, setDraftPoints] = useState([{ id: 1, latitude: '', longitude: '' }]);
   const [savingQuarry, setSavingQuarry] = useState(false);
+  const [includeBoundary, setIncludeBoundary] = useState(true);
   const [quarryDetails, setQuarryDetails] = useState({
     name: '',
     address: '',
@@ -52,9 +53,13 @@ export default function Landing() {
   });
 
   const quarryDraftModeRef = useRef(false);
+  const includeBoundaryRef = useRef(true);
   useEffect(() => {
     quarryDraftModeRef.current = quarryDraftMode;
   }, [quarryDraftMode]);
+  useEffect(() => {
+    includeBoundaryRef.current = includeBoundary;
+  }, [includeBoundary]);
 
   const mapContainerRef = useRef(null);
   const mapInstanceRef = useRef(null);
@@ -599,7 +604,7 @@ export default function Landing() {
 
       // Map click handler for adding/filling boundary points in draft mode
       map.on('click', (e) => {
-        if (!quarryDraftModeRef.current) return;
+        if (!quarryDraftModeRef.current || !includeBoundaryRef.current) return;
         const lat = parseFloat(e.lngLat.lat.toFixed(6));
         const lng = parseFloat(e.lngLat.lng.toFixed(6));
         setDraftPoints((points) => {
@@ -1286,6 +1291,7 @@ export default function Landing() {
       annual_allowable_volume_cubic_meters: '',
     });
     setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
+    setIncludeBoundary(true);
     nextDraftPointId.current = 2;
     setApplicationPickerOpen(false);
     setQuarryDraftMode(true);
@@ -1302,6 +1308,7 @@ export default function Landing() {
       annual_allowable_volume_cubic_meters: '',
     });
     setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
+    setIncludeBoundary(true);
     nextDraftPointId.current = 2;
     setApplicationPickerOpen(false);
     setQuarryDraftMode(true);
@@ -1324,6 +1331,7 @@ export default function Landing() {
   const cancelQuarryFlow = () => {
     setApplicationPickerOpen(false);
     setQuarryDraftMode(false);
+    setIncludeBoundary(true);
     setSelectedApplicationId('');
     setQuarryDetails({
       name: '',
@@ -1344,17 +1352,24 @@ export default function Landing() {
       return;
     }
 
-    if (validDraftPoints.length !== draftPoints.length) {
-      toast.error('Enter a valid latitude and longitude for every point');
-      return;
-    }
-    if (validDraftPoints.length < 3) {
-      toast.error('Add at least three coordinate points to define the quarry boundary');
-      return;
+    if (includeBoundary) {
+      if (validDraftPoints.length !== draftPoints.length) {
+        toast.error('Enter a valid latitude and longitude for every point');
+        return;
+      }
+      if (validDraftPoints.length < 3) {
+        toast.error('Add at least three coordinate points, or choose Skip boundary');
+        return;
+      }
     }
 
-    const latitude = validDraftPoints.reduce((sum, point) => sum + point[0], 0) / validDraftPoints.length;
-    const longitude = validDraftPoints.reduce((sum, point) => sum + point[1], 0) / validDraftPoints.length;
+    const mapCenter = mapObj?.getCenter();
+    const latitude = includeBoundary
+      ? validDraftPoints.reduce((sum, point) => sum + point[0], 0) / validDraftPoints.length
+      : mapCenter?.lat ?? center[1];
+    const longitude = includeBoundary
+      ? validDraftPoints.reduce((sum, point) => sum + point[1], 0) / validDraftPoints.length
+      : mapCenter?.lng ?? center[0];
     const applicationNote = selectedApplication
       ? `Created from operator application by ${selectedApplication.applicant_name}.`
       : 'Created directly by admin.';
@@ -1386,10 +1401,10 @@ export default function Landing() {
         description,
         latitude,
         longitude,
-        polygon_coordinates: validDraftPoints,
+        polygon_coordinates: includeBoundary ? validDraftPoints : null,
         address,
         status: selectedApplication ? 'pending' : 'active',
-        area_hectares: calcPolygonArea(validDraftPoints),
+        area_hectares: includeBoundary ? calcPolygonArea(validDraftPoints) : null,
         permit_number: permitNumber,
         permit_expires_at: permitExpiresAt,
         annual_allowable_volume_cubic_meters: annualAllowableVolume,
@@ -1409,8 +1424,9 @@ export default function Landing() {
       setQuarries((current) => [...current, createdQuarry]);
       setSelected(createdQuarry);
       setQuarryDraftMode(false);
+      setIncludeBoundary(true);
       navigate('/', { replace: true });
-      toast.success(selectedApplication ? 'Quarry boundary saved from the operator application' : 'Quarry created successfully');
+      toast.success(selectedApplication ? 'Quarry saved from the operator application' : 'Quarry created successfully');
     } catch (error) {
       toast.error(error.response?.data?.message || 'The quarry could not be saved');
     } finally {
@@ -1579,8 +1595,8 @@ export default function Landing() {
             </div>
             <p style={{ margin: '12px 0 0', fontSize: '0.77rem', lineHeight: 1.5, color: '#64748b' }}>
               {selectedApplication
-                ? 'Enter at least three latitude and longitude points. Valid points appear on the map immediately.'
-                : 'Enter quarry details and boundary coordinates. You can also click the map to add points.'}
+                ? 'Add at least three boundary points, or skip the boundary and save the quarry as a map point.'
+                : 'Enter quarry details. Boundary coordinates are optional and can be added by clicking the map.'}
             </p>
           </div>
 
@@ -1661,11 +1677,26 @@ export default function Landing() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-              <strong style={{ fontSize: '0.78rem', color: '#1e293b' }}>Boundary Coordinates</strong>
-              <span style={{ fontSize: '0.68rem', color: '#64748b' }}>Click map or enter below</span>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: 8 }}>
+              <div>
+                <strong style={{ fontSize: '0.78rem', color: '#1e293b' }}>Boundary Coordinates</strong>
+                <span style={{ marginLeft: 5, fontSize: '0.68rem', color: '#64748b' }}>(Optional)</span>
+              </div>
+              <button
+                type="button"
+                className="btn btn-secondary btn-sm"
+                onClick={() => {
+                  setIncludeBoundary((current) => !current);
+                  setDraftPoints([{ id: 1, latitude: '', longitude: '' }]);
+                  nextDraftPointId.current = 2;
+                }}
+              >
+                {includeBoundary ? 'Skip boundary' : 'Add boundary'}
+              </button>
             </div>
 
+            {includeBoundary ? <>
+            <p style={{ margin: '0 0 10px', fontSize: '0.68rem', color: '#64748b' }}>Click the map or enter at least three points below.</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {draftPoints.map((point, index) => (
                 <div key={point.id} style={{ padding: 12, border: '1px solid var(--border)', borderRadius: 10, background: '#fff' }}>
@@ -1694,7 +1725,7 @@ export default function Landing() {
                         value={point.latitude}
                         onChange={(event) => updateDraftPoint(point.id, 'latitude', event.target.value)}
                         placeholder="12.7480"
-                        required
+                        required={includeBoundary}
                       />
                     </label>
                     <label className="form-group" style={{ gap: 4 }}>
@@ -1708,7 +1739,7 @@ export default function Landing() {
                         value={point.longitude}
                         onChange={(event) => updateDraftPoint(point.id, 'longitude', event.target.value)}
                         placeholder="121.4892"
-                        required
+                        required={includeBoundary}
                       />
                     </label>
                   </div>
@@ -1726,11 +1757,16 @@ export default function Landing() {
                 ? ` · Boundary area: ${calcPolygonArea(validDraftPoints)} ha`
                 : ` · Add ${3 - validDraftPoints.length} more to form a boundary`}
             </div>
+            </> : (
+              <div style={{ padding: '12px', borderRadius: 9, background: '#F8FAFC', border: '1px dashed #CBD5E1', color: '#475569', fontSize: '0.75rem', lineHeight: 1.5 }}>
+                No boundary will be saved. The quarry marker will use the current center of the map. Pan the map to the quarry location before saving if needed.
+              </div>
+            )}
           </div>
 
           <div style={{ padding: '14px 18px', borderTop: '1px solid var(--border)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, background: '#fff' }}>
             <button type="button" className="btn btn-secondary" onClick={cancelQuarryFlow}>Cancel</button>
-            <button type="submit" className="btn btn-primary" disabled={savingQuarry || validDraftPoints.length < 3}>
+            <button type="submit" className="btn btn-primary" disabled={savingQuarry}>
               <Save size={16} /> {savingQuarry ? 'Saving…' : 'Save'}
             </button>
           </div>
