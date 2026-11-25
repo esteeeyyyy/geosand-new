@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { AlertTriangle, ClipboardCheck, Cpu, FileText, Leaf, Mountain, Plus, Shield, TrendingUp, Truck, X } from 'lucide-react';
+import { AlertTriangle, ClipboardCheck, Cpu, FileText, Mountain, Plus, Shield, TrendingUp, Truck, X } from 'lucide-react';
 import {
   Area, AreaChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
@@ -92,7 +92,7 @@ export default function MonitoringReports() {
   if (loading && !data) return <div className="loader-container"><div className="spinner" /></div>;
   if (!data) return <div className="empty-state"><h3>Monitoring data is unavailable</h3></div>;
 
-  const { stats, environmental_impact: environment, predictive_analysis: prediction } = data;
+  const { stats, predictive_analysis: prediction } = data;
 
   return (
     <div className={`animate-fadeIn monitoring-report ${showInspection ? 'form-page-open' : ''}`}>
@@ -155,41 +155,17 @@ export default function MonitoringReports() {
         </div>
       </div>
 
-      <div className="grid-2" style={{ marginBottom: 24 }}>
-        <div className="card">
-          <div className="card-header"><h3><Leaf size={18} /> Environmental impact</h3><span className="badge badge-info">Naive Bayes risk</span></div>
-          <div className="card-body monitoring-metrics">
-            <div style={{ gridColumn: '1 / -1', flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-              <Cpu size={22} style={{ color: environment?.naive_bayes_analysis?.color || 'var(--text-tertiary)', flexShrink: 0 }} />
-              <span style={{ display: 'flex', flexDirection: 'column' }}>
-                <strong style={{ color: environment?.naive_bayes_analysis?.color || 'var(--text-primary)' }}>{environment?.naive_bayes_analysis?.status === 'ready' ? `${environment.naive_bayes_analysis.grade} · ${environment.naive_bayes_analysis.grade_label}` : 'Awaiting field measurements'}</strong>
-                <small>{environment?.naive_bayes_analysis?.status === 'ready' ? `${environment.naive_bayes_analysis.confidence}% posterior confidence · Gaussian Naive Bayes` : environment?.naive_bayes_analysis?.message}</small>
-              </span>
-            </div>
-            <div><span>River setback compliance</span><strong>{environment?.river_setback_compliance_pct}%</strong></div>
-            <div><span>Riparian buffer zone</span><strong>{environment?.riparian_buffer_zone_meters} m</strong></div>
-            <div><span>Active setback violations</span><strong className="text-danger">{environment?.active_setback_violations}</strong></div>
-            <div><span>Sediment runoff index</span><strong>{environment?.sediment_runoff_index}</strong></div>
-            <div><span>Flood-plain hazard</span><strong>{environment?.flood_plain_hazard_level}</strong></div>
-            <div><span>Slope stability</span><strong>{environment?.slope_stability_index}</strong></div>
-            <div><span>Average PM2.5</span><strong>{environment?.air_quality_pm25 ?? 'No readings'}{environment?.air_quality_pm25 != null ? ' ug/m3' : ''}</strong></div>
-            <div><span>Average noise level</span><strong>{environment?.noise_level_db ?? 'No readings'}{environment?.noise_level_db != null ? ' dB' : ''}</strong></div>
-            <div><span>Rehabilitated area</span><strong>{environment?.rehabilitated_area_ha || 0} ha</strong></div>
-            <div><span>Field inspections</span><strong>{environment?.inspection_count || 0}</strong></div>
+      <div className="card" style={{ marginBottom: 24 }}>
+        <div className="card-header"><h3><Shield size={18} /> Permit & site compliance</h3></div>
+        <div className="card-body">
+          <div className="compliance-grid">
+            <div className="compliance-box success"><strong>{permitSummary.valid}</strong><span>Valid permits</span></div>
+            <div className="compliance-box warning"><strong>{permitSummary.expiring}</strong><span>Expiring soon</span></div>
+            <div className="compliance-box danger"><strong>{permitSummary.expired}</strong><span>Expired</span></div>
+            <div className="compliance-box neutral"><strong>{permitSummary.missing}</strong><span>Not submitted</span></div>
           </div>
-        </div>
-        <div className="card">
-          <div className="card-header"><h3><Shield size={18} /> Permit & site compliance</h3></div>
-          <div className="card-body">
-            <div className="compliance-grid">
-              <div className="compliance-box success"><strong>{permitSummary.valid}</strong><span>Valid permits</span></div>
-              <div className="compliance-box warning"><strong>{permitSummary.expiring}</strong><span>Expiring soon</span></div>
-              <div className="compliance-box danger"><strong>{permitSummary.expired}</strong><span>Expired</span></div>
-              <div className="compliance-box neutral"><strong>{permitSummary.missing}</strong><span>Not submitted</span></div>
-            </div>
-            <div className="status-strip">
-              {data.stats.quarry_status_breakdown?.map((item) => <div key={item.status}><span style={{ background: item.color }} />{item.status}<strong>{item.count}</strong></div>)}
-            </div>
+          <div className="status-strip">
+            {data.stats.quarry_status_breakdown?.map((item) => <div key={item.status}><span style={{ background: item.color }} />{item.status}<strong>{item.count}</strong></div>)}
           </div>
         </div>
       </div>

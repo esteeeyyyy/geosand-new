@@ -5,8 +5,7 @@ import { GeolocationControl, FullscreenControl, ScaleBar, CoordinateDisplay, Map
 import { getQuarry, getQuarryGisFile } from '../../api/quarries';
 import { getCheckpoints } from '../../api/checkpoints';
 import { createMapBoundaryOverlay } from '../../utils/mapBoundaryOverlay';
-import { ArrowLeft, MapPin, FileText, Ruler, ShieldCheck, ChevronLeft, ChevronRight, Calendar, AlertTriangle, Cpu, XCircle } from 'lucide-react';
-import AiTerrainAnalysisModal from '../../components/AiTerrainAnalysisModal';
+import { ArrowLeft, MapPin, FileText, Ruler, ShieldCheck, ChevronLeft, ChevronRight, Calendar, AlertTriangle, XCircle } from 'lucide-react';
 
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -24,7 +23,6 @@ export default function QuarryDetail() {
   const [loading, setLoading] = useState(true);
   const [is3D, setIs3D] = useState(false);
   const [cardCollapsed, setCardCollapsed] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
-  const [showAiModal, setShowAiModal] = useState(false);
   const [gisDetailInfo, setGisDetailInfo] = useState(null);
 
   const mapContainerRef = useRef(null);
@@ -680,8 +678,6 @@ export default function QuarryDetail() {
     );
   }
 
-  const aiAnalysis = quarry.ai_terrain_analysis;
-
   return (
     <div style={{ position: 'relative', width: '100%', height: 'calc(100vh - 64px)' }}>
       <div ref={mapContainerRef} style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }} />
@@ -794,48 +790,6 @@ export default function QuarryDetail() {
             <MapPin size={16} className="text-teal-600" /> {quarry.address || 'Bongabong, Oriental Mindoro'}
           </p>
 
-          {/* AI Naive Bayes Elevation Grade Badge */}
-          {aiAnalysis && (
-            <div style={{
-              borderRadius: 12, padding: 12, marginBottom: 14,
-              border: `1.5px solid ${aiAnalysis.color}`,
-              background: aiAnalysis.grade === 'RED' ? '#FEF2F2' : aiAnalysis.grade === 'YELLOW' ? '#FFFBEB' : '#ECFDF5',
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 4 }}>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, color: aiAnalysis.color, display: 'flex', alignItems: 'center', gap: 4 }}>
-                  <Cpu size={14} /> AI TERRAIN GRADE
-                </span>
-                <span style={{
-                  fontSize: '0.7rem', fontWeight: 700, padding: '2px 8px', borderRadius: 99,
-                  background: aiAnalysis.color, color: '#ffffff'
-                }}>
-                  {aiAnalysis.badge}
-                </span>
-              </div>
-
-              <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1E293B', marginBottom: 4 }}>
-                {aiAnalysis.grade_label}
-              </div>
-
-              <p style={{ margin: '0 0 10px', fontSize: '0.75rem', color: '#475569', lineHeight: 1.35 }}>
-                {aiAnalysis.recommendation}
-              </p>
-
-              <button
-                type="button"
-                onClick={() => setShowAiModal(true)}
-                className="btn btn-sm"
-                style={{
-                  width: '100%', background: aiAnalysis.color, color: '#ffffff', border: 'none',
-                  fontSize: '0.78rem', fontWeight: 600, padding: '6px 12px', borderRadius: 8,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6
-                }}
-              >
-                <Cpu size={14} /> Naive Bayes AI Terrain Details
-              </button>
-            </div>
-          )}
-
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10, fontSize: '0.85rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-light)', paddingBottom: 8 }}>
               <span className="text-muted flex items-center gap-1"><FileText size={14} /> Permit No:</span>
@@ -883,13 +837,6 @@ export default function QuarryDetail() {
           )}
         </div>
       )}
-
-      {/* AI Naive Bayes Modal */}
-      <AiTerrainAnalysisModal
-        quarry={quarry}
-        isOpen={showAiModal}
-        onClose={() => setShowAiModal(false)}
-      />
     </div>
   );
 }
