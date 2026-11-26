@@ -4,8 +4,10 @@ import { createQuarry, getQuarries, getQuarryGisFile } from '../../api/quarries'
 import { approveOperatorApplication, getOperatorApplications } from '../../api/operatorApplications';
 import { getCheckpoints } from '../../api/checkpoints';
 import { createMapBoundaryOverlay } from '../../utils/mapBoundaryOverlay';
+import { applyTopographicElevationHeatmap, createQuarryDepthZoneFeatures, prepareDepthHeatmapGeoJson } from '../../utils/depthSuitability';
 import { Mountain, MapPin, Search, X, ChevronLeft, ChevronRight, Building2, Plus, Trash2, FileText, ArrowRight, Save } from 'lucide-react';
 import { MapLayerControl } from '../../components/MapLayerToggle';
+import DepthHeatmapLegend from '../../components/DepthHeatmapLegend';
 import { GeolocationControl, FullscreenControl, ScaleBar, CoordinateDisplay, MapControlsToolbar, calcPolygonArea } from '../../components/MapControls';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -76,6 +78,7 @@ export default function Landing() {
   const quarriesRef = useRef([]);
   const nextDraftPointId = useRef(2);
   const lastPreviewCountRef = useRef(0);
+  const terrainHeatmapRequestRef = useRef(0);
 
   const center = [121.4892, 12.7480]; // Bongabong, Oriental Mindoro centroid
 
@@ -90,7 +93,7 @@ export default function Landing() {
       fetch(`/quarry_${quarryId}.geojson`)
         .then((r) => r.ok ? r.json() : null)
         .then((data) => {
-          if (data) gisCacheRef.current[quarryId] = data;
+          if (data) gisCacheRef.current[quarryId] = prepareDepthHeatmapGeoJson(data);
         })
         .catch(() => {});
     });
@@ -345,12 +348,7 @@ export default function Landing() {
             source: 'quarry-locations',
             filter: ['==', ['get', 'type_name'], 'Polygon'],
             paint: {
-              'fill-color': [
-                'match', ['get', 'status'],
-                'active', '#0F766E',
-                'suspended', '#D97706',
-                '#9CA3AF'
-              ],
+              'fill-color': ['coalesce', ['get', 'depth_color'], '#22C55E'],
               'fill-opacity': 0.25,
             },
           },
@@ -360,12 +358,7 @@ export default function Landing() {
             source: 'quarry-locations',
             filter: ['==', ['get', 'type_name'], 'Polygon'],
             paint: {
-              'line-color': [
-                'match', ['get', 'status'],
-                'active', '#0F766E',
-                'suspended', '#D97706',
-                '#9CA3AF'
-              ],
+              'line-color': '#0F766E',
               'line-width': 2,
             },
           },
@@ -459,8 +452,41 @@ export default function Landing() {
             minzoom: 13.5,
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'fill-color': ['coalesce', ['get', 'color'], '#0ea5e9'],
-              'fill-opacity': 0.65,
+              'fill-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#22C55E'],
+              'fill-opacity': 0.72,
+            },
+          },
+          {
+            id: 'quarries-elevation-heatmap',
+            type: 'heatmap',
+            source: 'quarry-locations',
+            filter: ['==', ['get', 'type_name'], 'ElevationSample'],
+            paint: {
+              'heatmap-weight': ['coalesce', ['get', 'heatmap_weight'], 0],
+              'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 9, 0.85, 13, 1, 17, 1.2],
+              'heatmap-radius': ['interpolate', ['linear'], ['zoom'], 9, 12, 13, 20, 17, 34],
+              'heatmap-opacity': 0.88,
+              'heatmap-color': [
+                'interpolate', ['linear'], ['heatmap-density'],
+                0, 'rgba(34, 197, 94, 0)',
+                0.02, 'rgba(34, 197, 94, 0.42)',
+                0.06, 'rgba(34, 197, 94, 0.72)',
+                0.1, 'rgba(250, 204, 21, 0.8)',
+                0.16, 'rgba(249, 115, 22, 0.88)',
+                0.24, 'rgba(239, 68, 68, 0.94)',
+                1, 'rgba(185, 28, 28, 1)',
+              ],
+            },
+          },
+          {
+            id: 'quarries-elevation-hit-area',
+            type: 'circle',
+            source: 'quarry-locations',
+            filter: ['==', ['get', 'type_name'], 'ElevationSample'],
+            paint: {
+              'circle-radius': 9,
+              'circle-color': 'rgba(15, 23, 42, 0.01)',
+              'circle-opacity': 0.01,
             },
           },
           {
@@ -470,7 +496,7 @@ export default function Landing() {
             minzoom: 13.5,
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'line-color': ['coalesce', ['get', 'color'], '#0369a1'],
+              'line-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#15803D'],
               'line-width': 2,
             },
           },
@@ -507,7 +533,7 @@ export default function Landing() {
             layout: { visibility: 'none' },
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'fill-extrusion-color': ['coalesce', ['get', 'color'], '#0ea5e9'],
+              'fill-extrusion-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#22C55E'],
               'fill-extrusion-height': ['coalesce', ['get', 'extrusion_height'], ['get', 'elevation'], 2],
               'fill-extrusion-base': 0,
               'fill-extrusion-opacity': 0.85,
@@ -634,6 +660,36 @@ export default function Landing() {
         map.getCanvas().style.cursor = '';
       });
 
+      const handleDepthZoneClick = (event) => {
+        if (quarryDraftModeRef.current) return;
+        const properties = event.features?.[0]?.properties;
+        if (!properties) return;
+
+        const content = document.createElement('div');
+        content.className = 'map-marker-popup depth-zone-popup';
+        const title = document.createElement('strong');
+        title.textContent = `${properties.quarry_name || 'Quarry'} elevation sample`;
+        const depth = document.createElement('span');
+        depth.textContent = properties.elevation_m === null || properties.elevation_m === undefined
+          ? properties.depth_label
+          : `${properties.elevation_m} m elevation · ${properties.depth_label}`;
+        depth.style.color = properties.depth_color || '#334155';
+        const source = document.createElement('small');
+        source.textContent = properties.elevation_rank
+          ? `${properties.elevation_rank} within this quarry · Terrarium topographic DEM`
+          : 'Loading topographic elevation';
+        content.append(title, depth, source);
+
+        new maplibregl.Popup({ offset: 10, closeButton: true })
+          .setLngLat(event.lngLat)
+          .setDOMContent(content)
+          .addTo(map);
+      };
+
+      map.on('click', 'quarries-elevation-hit-area', handleDepthZoneClick);
+      map.on('mouseenter', 'quarries-elevation-hit-area', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'quarries-elevation-hit-area', () => { map.getCanvas().style.cursor = ''; });
+
       const handleBoundaryPointClick = (event) => {
         if (quarryDraftModeRef.current) return;
         const properties = event.features?.[0]?.properties;
@@ -672,12 +728,16 @@ export default function Landing() {
           .setHTML(`
             <div style="font-family:Inter,system-ui,sans-serif;padding:6px 8px;min-width:200px;">
               <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${props.color || '#0ea5e9'};"></span>
+                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${props.depth_color || props.color || '#22C55E'};"></span>
                 <strong style="font-size:0.9rem;color:#0f172a;">${props.name || 'Operational Zone'}</strong>
               </div>
               <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
                 Type: <strong style="color:#334155;">${props.type || 'Zone'}</strong>
               </div>
+              ${props.depth_m !== undefined ? `
+                <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
+                  Excavation depth: <strong style="color:${props.depth_color || '#16A34A'};">${props.depth_m} m · ${props.depth_label || 'Good'}</strong>
+                </div>` : ''}
               ${props.elevation !== undefined ? `
                 <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
                   Elevation / Depth: <strong style="color:${Number(props.elevation) < 0 ? '#ef4444' : '#10b981'};">${Number(props.elevation) > 0 ? '+' : ''}${props.elevation}m</strong>
@@ -764,6 +824,7 @@ export default function Landing() {
     });
 
     return () => {
+      terrainHeatmapRequestRef.current += 1;
       // Clean up markers
       markersRef.current.forEach(m => m.remove());
       markersRef.current = [];
@@ -791,6 +852,7 @@ export default function Landing() {
     const features = [];
 
     quarryList.forEach((q) => {
+      features.push(...createQuarryDepthZoneFeatures(q));
       let rawPoly = q.polygon_coordinates;
       if (typeof rawPoly === 'string') {
         try { rawPoly = JSON.parse(rawPoly); } catch (e) { rawPoly = null; }
@@ -895,7 +957,13 @@ export default function Landing() {
         features.push({
           type: 'Feature',
           geometry: { type: 'Polygon', coordinates: [polyCoords] },
-          properties: { id: q.id, name: q.name, status: q.status, type_name: 'Polygon' },
+          properties: {
+            id: q.id,
+            name: q.name,
+            status: q.status,
+            type_name: 'Polygon',
+            depth_color: '#0F766E',
+          },
         });
 
         const boundaryPoints = polyCoords.slice(0, -1);
@@ -920,7 +988,13 @@ export default function Landing() {
     // Update GeoJSON source
     const source = map.getSource('quarry-locations');
     if (source) {
-      source.setData({ type: 'FeatureCollection', features });
+      const collection = { type: 'FeatureCollection', features };
+      const requestId = ++terrainHeatmapRequestRef.current;
+      source.setData(collection);
+      applyTopographicElevationHeatmap(collection).then((topographicCollection) => {
+        if (requestId !== terrainHeatmapRequestRef.current) return;
+        map.getSource('quarry-locations')?.setData(topographicCollection);
+      });
     }
   };
 
@@ -1033,8 +1107,8 @@ export default function Landing() {
       const cached = gisCacheRef.current[q.id];
       currentLoadedGisId.current = q.id;
       const src = m.getSource('quarry-gis-detail');
-      if (src) src.setData(cached);
-      setActiveGisInfo({ name: q.name, count: cached.features?.length || 1 });
+      if (src) src.setData(cached.geojson);
+      setActiveGisInfo({ name: q.name, count: cached.summary.zones, summary: cached.summary });
       return;
     }
 
@@ -1054,11 +1128,12 @@ export default function Landing() {
       }
 
       if (data) {
+        const prepared = prepareDepthHeatmapGeoJson(data);
         currentLoadedGisId.current = q.id;
-        gisCacheRef.current[q.id] = data;
+        gisCacheRef.current[q.id] = prepared;
         const src = m.getSource('quarry-gis-detail');
-        if (src) src.setData(data);
-        setActiveGisInfo({ name: q.name, count: data.features?.length || 1 });
+        if (src) src.setData(prepared.geojson);
+        setActiveGisInfo({ name: q.name, count: prepared.summary.zones, summary: prepared.summary });
       } else {
         const src = m.getSource('quarry-gis-detail');
         if (src) src.setData({ type: 'FeatureCollection', features: [] });
@@ -1542,6 +1617,8 @@ export default function Landing() {
           <span>GIS Site Plan: <strong style={{ color: '#38BDF8' }}>{activeGisInfo.name}</strong> ({activeGisInfo.count} Zones)</span>
         </div>
       )}
+
+      {!quarryDraftMode && <DepthHeatmapLegend />}
 
       <div className="map-utility-stack" style={{ position: 'absolute', bottom: 24, right: 16, zIndex: 100, display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-end' }}>
         <MapControlsToolbar>

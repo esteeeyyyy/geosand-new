@@ -1421,6 +1421,109 @@ h4 { font-size: 1.125rem; }
   font-size: 0.72rem;
 }
 
+.depth-zone-popup small {
+  margin-top: 5px;
+  color: #64748B;
+  line-height: 1.35;
+}
+
+.depth-heatmap-legend {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  z-index: 88;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  max-width: calc(100% - 360px);
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.16);
+  backdrop-filter: blur(10px);
+  transform: translateX(-50%);
+}
+
+.depth-heatmap-legend__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding-right: 14px;
+  border-right: 1px solid #E2E8F0;
+  color: #0F172A;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.depth-heatmap-legend__heading span {
+  color: #64748B;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.depth-heatmap-legend__items {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.depth-heatmap-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #334155;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.depth-heatmap-legend__item > span:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.depth-heatmap-legend__item small {
+  color: #64748B;
+  font-size: 0.68rem;
+}
+
+.depth-heatmap-legend__swatch {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  border: 2px solid #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.18);
+}
+
+@media (max-width: 900px) {
+  .depth-heatmap-legend {
+    bottom: 82px;
+    max-width: calc(100% - 24px);
+    gap: 10px;
+    padding: 9px 11px;
+  }
+
+  .depth-heatmap-legend__heading {
+    display: none;
+  }
+
+  .depth-heatmap-legend__items {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 520px) {
+  .depth-heatmap-legend__item {
+    gap: 5px;
+  }
+
+  .depth-heatmap-legend__item small {
+    display: none;
+  }
+}
+
 .landing-sidebar {
   width: 380px;
   background: var(--bg-primary);

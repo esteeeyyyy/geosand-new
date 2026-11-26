@@ -5,6 +5,8 @@ import { GeolocationControl, FullscreenControl, ScaleBar, CoordinateDisplay, Map
 import { getQuarry, getQuarryGisFile } from '../../api/quarries';
 import { getCheckpoints } from '../../api/checkpoints';
 import { createMapBoundaryOverlay } from '../../utils/mapBoundaryOverlay';
+import { applyTopographicElevationHeatmap, createQuarryDepthZoneFeatures, prepareDepthHeatmapGeoJson } from '../../utils/depthSuitability';
+import DepthHeatmapLegend from '../../components/DepthHeatmapLegend';
 import { ArrowLeft, MapPin, FileText, Ruler, ShieldCheck, ChevronLeft, ChevronRight, Calendar, AlertTriangle, XCircle } from 'lucide-react';
 
 import * as maplibregl from 'maplibre-gl';
@@ -45,6 +47,7 @@ export default function QuarryDetail() {
   useEffect(() => {
     if (!mapContainerRef.current || !quarry) return;
 
+    let cancelled = false;
     const boundaryDomMarkers = [];
     let boundaryLineCleanup = () => {};
 
@@ -255,8 +258,41 @@ export default function QuarryDetail() {
             source: 'quarry-gis-detail',
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'fill-color': ['coalesce', ['get', 'color'], '#0ea5e9'],
-              'fill-opacity': 0.65,
+              'fill-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#22C55E'],
+              'fill-opacity': 0.72,
+            },
+          },
+          {
+            id: 'quarry-elevation-heatmap',
+            type: 'heatmap',
+            source: 'quarry-data',
+            filter: ['==', ['get', 'type_name'], 'ElevationSample'],
+            paint: {
+              'heatmap-weight': ['coalesce', ['get', 'heatmap_weight'], 0],
+              'heatmap-intensity': ['interpolate', ['linear'], ['zoom'], 11, 0.85, 14, 1, 17, 1.2],
+              'heatmap-radius': ['interpolate', ['linear'], ['zoom'], 11, 14, 14, 22, 17, 36],
+              'heatmap-opacity': 0.9,
+              'heatmap-color': [
+                'interpolate', ['linear'], ['heatmap-density'],
+                0, 'rgba(34, 197, 94, 0)',
+                0.02, 'rgba(34, 197, 94, 0.42)',
+                0.06, 'rgba(34, 197, 94, 0.72)',
+                0.1, 'rgba(250, 204, 21, 0.8)',
+                0.16, 'rgba(249, 115, 22, 0.88)',
+                0.24, 'rgba(239, 68, 68, 0.94)',
+                1, 'rgba(185, 28, 28, 1)',
+              ],
+            },
+          },
+          {
+            id: 'quarry-elevation-hit-area',
+            type: 'circle',
+            source: 'quarry-data',
+            filter: ['==', ['get', 'type_name'], 'ElevationSample'],
+            paint: {
+              'circle-radius': 10,
+              'circle-color': 'rgba(15, 23, 42, 0.01)',
+              'circle-opacity': 0.01,
             },
           },
           {
@@ -265,7 +301,7 @@ export default function QuarryDetail() {
             source: 'quarry-gis-detail',
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'line-color': ['coalesce', ['get', 'color'], '#0369a1'],
+              'line-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#15803D'],
               'line-width': 2,
             },
           },
@@ -299,7 +335,7 @@ export default function QuarryDetail() {
             layout: { visibility: 'none' },
             filter: ['==', '$type', 'Polygon'],
             paint: {
-              'fill-extrusion-color': ['coalesce', ['get', 'color'], '#0ea5e9'],
+              'fill-extrusion-color': ['coalesce', ['get', 'depth_color'], ['get', 'color'], '#22C55E'],
               'fill-extrusion-height': ['coalesce', ['get', 'extrusion_height'], ['get', 'elevation'], 2],
               'fill-extrusion-base': 0,
               'fill-extrusion-opacity': 0.85,
@@ -356,7 +392,8 @@ export default function QuarryDetail() {
 
       const features = [];
       const aiAnalysis = quarry.ai_terrain_analysis;
-      const aiColor = aiAnalysis?.color || '#0F766E';
+      const aiColor = '#0F766E';
+      features.push(...createQuarryDepthZoneFeatures(quarry));
 
       if (quarry.longitude && quarry.latitude) {
         const lng = parseFloat(quarry.longitude);
@@ -498,7 +535,13 @@ export default function QuarryDetail() {
       }
 
       const source = map.getSource('quarry-data');
-      if (source) source.setData({ type: 'FeatureCollection', features });
+      if (source) {
+        const collection = { type: 'FeatureCollection', features };
+        source.setData(collection);
+        applyTopographicElevationHeatmap(collection).then((topographicCollection) => {
+          if (!cancelled) map.getSource('quarry-data')?.setData(topographicCollection);
+        });
+      }
 
       const handleBoundaryPointClick = (event) => {
         const properties = event.features?.[0]?.properties;
@@ -521,6 +564,35 @@ export default function QuarryDetail() {
       map.on('click', 'quarry-boundary-points', handleBoundaryPointClick);
       map.on('mouseenter', 'quarry-boundary-points', () => { map.getCanvas().style.cursor = 'pointer'; });
       map.on('mouseleave', 'quarry-boundary-points', () => { map.getCanvas().style.cursor = ''; });
+
+      const handleDepthZoneClick = (event) => {
+        const properties = event.features?.[0]?.properties;
+        if (!properties) return;
+
+        const content = document.createElement('div');
+        content.className = 'map-marker-popup depth-zone-popup';
+        const title = document.createElement('strong');
+        title.textContent = `${properties.quarry_name || quarry.name} elevation sample`;
+        const depth = document.createElement('span');
+        depth.textContent = properties.elevation_m === null || properties.elevation_m === undefined
+          ? properties.depth_label
+          : `${properties.elevation_m} m elevation · ${properties.depth_label}`;
+        depth.style.color = properties.depth_color || '#334155';
+        const source = document.createElement('small');
+        source.textContent = properties.elevation_rank
+          ? `${properties.elevation_rank} within this quarry · Terrarium topographic DEM`
+          : 'Loading topographic elevation';
+        content.append(title, depth, source);
+
+        new maplibregl.Popup({ offset: 10, closeButton: true })
+          .setLngLat(event.lngLat)
+          .setDOMContent(content)
+          .addTo(map);
+      };
+
+      map.on('click', 'quarry-elevation-hit-area', handleDepthZoneClick);
+      map.on('mouseenter', 'quarry-elevation-hit-area', () => { map.getCanvas().style.cursor = 'pointer'; });
+      map.on('mouseleave', 'quarry-elevation-hit-area', () => { map.getCanvas().style.cursor = ''; });
 
       const checkpointFeatures = checkpoints.map((checkpoint) => {
         const longitude = Number(checkpoint.longitude);
@@ -584,9 +656,9 @@ export default function QuarryDetail() {
           }
 
           if (gisData && map.getSource('quarry-gis-detail')) {
-            map.getSource('quarry-gis-detail').setData(gisData);
-            const featCount = gisData.features?.length || 1;
-            setGisDetailInfo({ name: quarry.name, count: featCount });
+            const prepared = prepareDepthHeatmapGeoJson(gisData);
+            map.getSource('quarry-gis-detail').setData(prepared.geojson);
+            setGisDetailInfo({ name: quarry.name, count: prepared.summary.zones, summary: prepared.summary });
           }
         } catch (err) {
           console.warn('Could not load detailed GIS file:', err);
@@ -605,12 +677,16 @@ export default function QuarryDetail() {
           .setHTML(`
             <div style="font-family:Inter,system-ui,sans-serif;padding:6px 8px;min-width:200px;">
               <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${props.color || '#0ea5e9'};"></span>
+                <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${props.depth_color || props.color || '#22C55E'};"></span>
                 <strong style="font-size:0.9rem;color:#0f172a;">${props.name || 'Operational Zone'}</strong>
               </div>
               <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
                 Type: <strong style="color:#334155;">${props.type || 'Zone'}</strong>
               </div>
+              ${props.depth_m !== undefined ? `
+                <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
+                  Excavation depth: <strong style="color:${props.depth_color || '#16A34A'};">${props.depth_m} m · ${props.depth_label || 'Good'}</strong>
+                </div>` : ''}
               ${props.elevation !== undefined ? `
                 <div style="font-size:0.75rem;color:#64748b;margin-bottom:4px;">
                   Elevation / Depth: <strong style="color:${Number(props.elevation) < 0 ? '#ef4444' : '#10b981'};">${Number(props.elevation) > 0 ? '+' : ''}${props.elevation}m</strong>
@@ -644,6 +720,7 @@ export default function QuarryDetail() {
     });
 
     return () => {
+      cancelled = true;
       boundaryLineCleanup();
       boundaryDomMarkers.forEach((marker) => marker.remove());
       map.remove();
@@ -703,6 +780,8 @@ export default function QuarryDetail() {
           <span>GIS Site Plan Active: <strong style={{ color: '#38BDF8' }}>{gisDetailInfo.name}</strong> ({gisDetailInfo.count} Zones)</span>
         </div>
       )}
+
+      <DepthHeatmapLegend />
 
       <div className="map-utility-stack" style={{ position: 'absolute', bottom: 24, right: 16, zIndex: 100, display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-end' }}>
         <MapControlsToolbar>
